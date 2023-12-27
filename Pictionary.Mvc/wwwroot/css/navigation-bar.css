@@ -1,0 +1,120 @@
+.navigation-container {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-block: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+.navigation-logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  align-self: stretch;
+}
+.navigation-logoText {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+.navigation-logo {
+  width: 3rem;
+}
+.navigation-navItemsContainer {
+  display: flex;
+  gap: 1.3rem;
+  justify-content: center;
+}
+
+.navigation-navItem {
+  font-size: 1.05rem;
+}
+.navigation-navItem a:hover {
+  color: var(--purple) !important;
+  font-weight: 500;
+}
+
+.navigation-navLink {
+  text-decoration: none;
+  color: var(--black) !important;
+}
+.navigation-navLink a:hover {
+  color: var(--purple) !important;
+  font-weight: 500;
+}
+.navigation-column {
+  width: 33.33%;
+  justify-content: center;
+}
+.navigation-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  padding-left: 1rem;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.navigation-hamburger > div {
+  background: var(--black);
+  height: 3px;
+  width: 25px;
+}
+.navigation-hamburger:hover > div {
+  opacity: 1;
+}
+
+.navigation-hamburger > div:nth-child(2) {
+  transform: translateY(0);
+}
+
+.navigation-hamburger:active > div:nth-child(2) {
+  transform: translateY(2px);
+}
+
+@media screen and (max-width: 768px) {
+  .navigation-container {
+    flex-direction: column;
+    gap: 0rem;
+    /* padding-block: 0.5rem; */
+  }
+  .navigation-logoContainer {
+    align-self: center;
+  }
+  .navigation-navItemsContainer {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+  }
+  .navigation-navItemsContainer.active {
+    padding-top: 0.65rem;
+    display: flex;
+    max-height: 300px;
+  }
+  .navigation-column {
+    width: 100%;
+  }
+  .navigation-navItem {
+    text-align: center;
+    padding-block: 0.1rem;
+  }
+  .navigation-hamburger {
+    display: flex;
+  }
+}

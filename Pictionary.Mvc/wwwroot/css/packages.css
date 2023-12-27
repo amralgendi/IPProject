@@ -1,0 +1,43 @@
+.packages-container {
+  padding-block: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+}
+.packages-header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.packages-title {
+  font-size: 2.35rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  border-bottom: 3px solid #9ea8db;
+  font-family: "Outfit";
+}
+.packages-polaroids {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .packages-polaroids {
+    flex-direction: column;
+    gap: 1.7rem;
+    align-items: center;
+  }
+  .packages-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .packages-title {
+    font-size: 1.75rem;
+    border-bottom: 2px solid #9ea8db;
+  }
+}

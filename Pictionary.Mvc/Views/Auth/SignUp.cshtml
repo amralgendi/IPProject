@@ -1,0 +1,87 @@
+@{
+    ViewData["Title"] = "Sign up Page";
+}
+
+@section styles {
+    <link rel="stylesheet" href="~/css/sign-up.css" asp-append-version="true" />
+}
+
+<div class="sign-up-container">
+<div class="sign-up-form-signupContainer">
+      <div class="sign-up-form-signupFormHeader">
+        <h1 class="sign-up-form-signupFormHeaderTitle">Create an Account</h1>
+        <p class="sign-up-form-signupFormHeaderSubtitle">
+          Please enter your details to sign up
+        </p>
+      </div>
+      @Html.BeginForm()
+      <form class="sign-up-form-signupFormBody">
+        <div class="sign-up-form-nameContainer">
+          <InputField
+            type={"text"}
+            label={"First Name"}
+            name={"firstName"}
+            placeholder="Jane"
+            onChange={(event) => handleInputChange(event)}
+            class="sign-up-form-nameInput"
+          />
+          <InputField
+            type={"text"}
+            label={"Last Name"}
+            name={"lastName"}
+            placeholder="Doe"
+            onChange={(event) => handleInputChange(event)}
+            class="sign-up-form-nameInput"
+          />
+        </div>
+        <InputField
+          type={"email"}
+          label={"Email"}
+          name={"email"}
+          placeholder="example@example.com"
+          onChange={(event) => handleInputChange(event)}
+        />
+        <InputField
+          type={"tel"}
+          label={"Phone Number"}
+          name={"phoneNumber"}
+          placeholder="Enter Your Phone Number"
+          onChange={(event) => handleInputChange(event)}
+        />
+        <InputField
+          type={"password"}
+          label={"Password"}
+          name={"password"}
+          placeholder="Enter Your Password"
+          onChange={(event) => handleInputChange(event)}
+        />
+        <InputField
+          type={"password"}
+          label={"Confirm Password"}
+          name={"confirmPassword"}
+          placeholder="Confirm Your Password"
+          onChange={(event) => handleInputChange(event)}
+        />
+        <div class="sign-up-form-termsAndConditions">
+          <input
+            type="checkbox"
+            id="termsAndConditions"
+            name="termsAndConditions"
+            value="termsAndConditions"
+            onChange={(event) => handleInputChange(event)}
+          />
+          <label htmlFor="termsAndConditions">
+            I agree to the <a href="#">Terms and Conditions</a>
+          </label>
+        </div>
+        <div class="sign-up-form-buttonsContainer">
+          <StretchedButton
+            type="submit"
+            text={"Sign Up"}
+            onClick={handleSubmit}
+            loading={loading}
+          />
+        </div>
+      </form>
+    </div>
+</div>

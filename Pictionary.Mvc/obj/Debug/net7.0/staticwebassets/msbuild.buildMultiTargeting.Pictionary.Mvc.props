@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Pictionary.Mvc.props" />
+</Project>

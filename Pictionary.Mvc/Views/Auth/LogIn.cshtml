@@ -1,0 +1,89 @@
+@{
+    ViewData["Title"] = "Order Page";
+}
+
+@section styles {
+    <link rel="stylesheet" href="~/css/order.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/polaroid-showcase.css" asp-append-version="true" />
+}
+
+<div class="order-container">
+    @* {imageFiles.length === 0 ? (
+    <> *@
+    <div class="order-description">
+        <h1 class="order-title">Order Your Polaroids Today!</h1>
+        <p class="order-text">
+            Choose from our selection of beautiful polaroids that you can cherish
+            for years to come.
+        </p>
+    </div>
+    <div class="order-shipping">
+        <h3 class="order-subtitle">
+            Shipping Available in Cairo & Alexandria
+        </h3>
+        <p class="order-text">
+            We offer shipping to customers in Cairo and Alexandria for a flat rate
+            of 50 EGP in Cairo and 60 EGP in Alexandria. Delivery is guaranteed
+            within one week of placing your order.
+        </p>
+        <p class="order-steps">
+            To get started, upload your photos and choose between our wide and
+            mini polaroid frames. We'll turn your photos into beautiful polaroids
+            that you can cherish for years to come.
+        </p>
+    </div>
+    <div class="order-polaroidsContainer">
+        <div class="polaroid-showcase-container">
+            <img
+                src="~/assets/images/miniPolaroid.jpg"
+                alt="polaroid"
+                class="polaroid-showcase-mini"
+            />
+            <div class="polaroid-showcase-details">
+                <h3 class="polaroid-showcase-title">Mini Polaroid</h3>
+                <p class="polaroid-showcase-text">
+                    40 EGP per Picture
+                </p>
+                <p class="polaroid-showcase-text">
+                    Frame Size: 2.13 x 3.39``
+                </p>
+            </div>
+        </div>
+        <div class="polaroid-showcase-container">
+            <img
+                src="~/assets/images/widePolaroid.jpg"
+                alt="polaroid"
+                class="polaroid-showcase-wide"
+            />
+            <div class="polaroid-showcase-details">
+                <h3 class="polaroid-showcase-title">Wide Polaroid</h3>
+                <p class="polaroid-showcase-text">
+                    45 EGP per Picture
+                </p>
+                <p class="polaroid-showcase-text">
+                    Frame Size: 4.25 x 3.39``
+                </p>
+            </div>
+        </div>
+    </div>
+    @using (Html.BeginForm("upload-file", "order", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div>
+            @Html.TextBox("file", "", new {  type= "file"}) <br />
+            <input type="submit" value="Upload" />
+        </div>
+    }
+    @* <UploadSection handleImageUpload={handleImageUpload} /> *@
+    @* </>
+    ) : (
+    <>
+        <OrderingConfig
+        imageFiles={imageFiles}
+        removeImage={removeImage}
+        handleImageUpload={handleImageUpload}
+        handleFrameSelection={handleFrameSelection}
+        />
+        <BottomTab imageFiles={imageFiles} quantity={quantity} />
+    </>
+    )} *@
+</div>

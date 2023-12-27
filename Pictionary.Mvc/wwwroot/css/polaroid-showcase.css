@@ -1,0 +1,48 @@
+.polaroid-showcase-container {
+  display: flex;
+  gap: 2rem;
+  font-family: "Outfit";
+  align-items: center;
+}
+
+.polaroid-showcase-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: "Outfit";
+}
+.polaroid-showcase-title {
+  border-bottom: 3px solid #9ea8db;
+  align-self: flex-start;
+}
+
+.polaroid-showcase-mini {
+  width: 150px;
+}
+
+.polaroid-showcase-wide {
+  width: 190px;
+}
+
+@media screen and (max-width: 768px) {
+  .polaroid-showcase-container {
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    padding-left: 20px;
+    gap: 3rem;
+  }
+  .polaroid-showcase-mini {
+    width: 80px;
+  }
+  .polaroid-showcase-wide {
+    width: 130px;
+  }
+  .polaroid-showcase-details {
+    gap: 0.3rem;
+    width: 50%;
+  }
+  .polaroid-showcase-text {
+    font-size: 0.9rem;
+  }
+}

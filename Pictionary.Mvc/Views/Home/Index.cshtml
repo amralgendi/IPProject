@@ -1,0 +1,115 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    List<(string Title, string Review)> Reviews = new(){
+    ("John Doe", "I have just received the packing early.First of all, thank you so much, I got them on time and Second, I can't tell you how those pictures mean to me and to see them in my hands with a great quality is more than perfect honestly🥰❤️ Thank you soo muchhh😘😘😘"),
+    ("John Doe", " The Polaroids are so so nice and the quality, packaging and pics look so good and perfect 🤩🤩❤️thank you so muchhhh and definitely won't be the last time❤️❤️❤️😍"),
+    ("John Doe", "Begad thank you so much! The quality, the packaging and everything is just INSANE! It is definitely not going to be the last time for me to order! Even the delivery time was SO quick!🤍"),
+    ("John Doe", "I loveee them and i’m currently deciding to make a full wall of them so definitely won’t be my last order💗💗"),
+    ("John Doe", "I received my order today, i love the quality it passed my expectations! Thankkyouu💗💗"),
+    ("John Doe", "I loveee them and i’m currently deciding to make a full wall of them so definitely won’t be my last order💗💗")} ;
+}
+
+@section styles {
+    <link rel="stylesheet" href="~/css/hero.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/packages.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/polaroid-showcase.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/reviews.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/large-outline-button.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/large-button.css" asp-append-version="true" />
+}
+
+<div id="home" class="hero-container"
+    @* style={{
+    backgroundImage: `url(${BGimage})`, // Corrected this line
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    }} *@
+>
+    <div class="hero-header">
+        <h1 class="hero-title">Never lose a moment,</h1>
+        <h1 class="hero-title">Make it yours.</h1>
+    </div>
+    <p class="hero-description">
+        Over 1000+ happy customers & 3000+ captured moments
+    </p>
+
+    <button
+      type="button"
+      class="large-outline-button-container hero-button"}
+      onClick={onClick}
+    >
+      <span class="large-outline-button-text">Order Now</span>
+    </button>
+</div>
+<div id="packages" class="packages-container">
+    <div class="packages-header">
+        <h1 class="packages-title">Steps to Order</h1>
+        @* <ProgressBar /> *@
+    </div>
+    <div class="packages-polaroids">
+        <div class="polaroid-showcase-container">
+            <img
+                src="~/assets/images/miniPolaroid.jpg"
+                alt="polaroid"
+                class="polaroid-showcase-mini"
+            />
+            <div class="polaroid-showcase-details">
+                <h3 class="polaroid-showcase-title">Mini Polaroid</h3>
+                <p class="polaroid-showcase-text">
+                    40 EGP per Picture
+                </p>
+                <p class="polaroid-showcase-text">
+                    Frame Size: 2.13 x 3.39``
+                </p>
+            </div>
+        </div>
+        <div class="polaroid-showcase-container">
+            <img
+                src="~/assets/images/widePolaroid.jpg"
+                alt="polaroid"
+                class="polaroid-showcase-wide"
+            />
+            <div class="polaroid-showcase-details">
+                <h3 class="polaroid-showcase-title">Wide Polaroid</h3>
+                <p class="polaroid-showcase-text">
+                    45 EGP per Picture
+                </p>
+                <p class="polaroid-showcase-text">
+                    Frame Size: 4.25 x 3.39``
+                </p>
+            </div>
+        </div>
+    </div>
+    <button
+        type="button"
+        class="large-button-container"
+        @* onClick={onClick} *@
+    >
+        <span class="large-button-text">Order Now</span>
+    </button>
+</div>
+
+<div class="reviews-section-line"></div>
+
+<div id="reviews" class="reviews-section-container">
+    <h1 class="reviews-section-title">What our customers say about us...</h1>
+    <div class="reviews-container-container">
+        @foreach (var review in Reviews)
+        {
+            <div class="reviews-card-container">
+                <p class="reviews-card-name">
+                    @review.Title
+                </p>
+                <div class="reviews-card-text">
+                    <p class="reviews-card-review">“@review.Review”</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@* <div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div> *@

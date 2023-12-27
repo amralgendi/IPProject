@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Pictionary.Mvc</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/navigation-bar.css" asp-append-version="true" />
+    @* <link rel="stylesheet" href="~/Pictionary.Mvc.styles.css" asp-append-version="true" /> *@
+    @RenderSection("styles", false)
+</head>
+<body>
+    <header>
+        <nav class="navigation-container">
+            <div class="navigation-column">
+                <div class="navigation-logoContainer">
+                    <img src="~/assets/logo.png" alt="logo" class="navigation-logo" />
+                    <h1 class="navigation-logoText">Pictionary</h1>
+                    <div class="navigation-hamburger" onClick="toggleMenu">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation-column">
+                <ul class="navigation-navItemsContainer">
+                <li class="navigation-navItem">
+                    @Html.ActionLink("Home", "", "", null, null, "home", null, new { @class = "navigation-navLink"})
+                    @* <HashLink smooth to="/#home" class="navigation-navLink">
+                    Home
+                    </HashLink> *@
+                </li>
+                <li class="navigation-navItem">
+                    @Html.ActionLink("Packages", "", "", null, null, "packages", null, new { @class = "navigation-navLink"})
+                    @* <HashLink
+                    smooth
+                    to="/#packages"
+                    class="navigation-navLink"
+                    scroll={(el) => scrollWithOffset(el)}
+                    >
+                    Packages
+                    </HashLink> *@
+                </li>
+                <li class="navigation-navItem">
+                    @Html.ActionLink("Reviews", "", "", null, null, "reviews", null, new { @class = "navigation-navLink"})
+                    @* <HashLink
+                    smooth
+                    to="/#reviews"
+                    class="navigation-navLink"
+                    scroll={(el) => scrollWithOffset(el)}
+                    >
+                    Reviews
+                    </HashLink>  *@
+                </li>
+                <li class="navigation-navItem">
+                    @Html.ActionLink("Contact Us", "", "", null, null, "contact", null, new { @class = "navigation-navLink"})
+                    @* <HashLink
+                    smooth
+                    to="/#contact"
+                    scroll={(el) => scrollWithOffset(el)}
+                    class="navigation-navLink"
+                    >
+                    Contact Us
+                    </HashLink> *@
+                </li>
+                </ul>
+            </div>
+            <div class="navigation-column">
+                <ul class="navigation-navItemsContainer">
+                @* <li class="navigation-navItem">
+                    {isAuthenticated ? (
+                    <NavLink to="/order" class="navigation-navLink">
+                        Order Now
+                    </NavLink>
+                    ) : (
+                    <NavLink to="/login" class="navigation-navLink">
+                        Login
+                    </NavLink>
+                    )}
+                </li> *@
+                <li class="navigation-navItem">
+                    @* {!isAuthenticated ? (
+                    <NavLink to="/signup" class="navigation-navLink">
+                        Sign Up
+                    </NavLink>
+                    ) : (
+                    <NavLink to="/my-orders" class="navigation-navLink">
+                        My Orders
+                    </NavLink>
+                    )} *@
+                </li>
+                @* {user && user.role === "admin" && (
+                    <li class="navigation-navItem">
+                    <NavLink to="/admin" class="navigation-navLink">
+                        Admin
+                    </NavLink>
+                    </li>
+                )} *@
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Pictionary.Mvc - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

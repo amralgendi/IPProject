@@ -1,0 +1,101 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Pictionary.Mvc.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Pictionary.Mvc.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\assets\\.DS_Store",
+      "PackagePath": "staticwebassets\\assets\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\assets\\images\\.DS_Store",
+      "PackagePath": "staticwebassets\\assets\\images\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\assets\\images\\checkoutBackground.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\checkoutBackground.jpg"
+    },
+    {
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\assets\\images\\hero.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\hero.jpg"
+    },
+    {
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\assets\\images\\miniPolaroid.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\miniPolaroid.jpg"
+    },
+    {
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\assets\\images\\widePolaroid.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\widePolaroid.jpg"
+    },
+    {
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\assets\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\assets\\spinner.svg",
+      "PackagePath": "staticwebassets\\assets\\spinner.svg"
+    },
+    {
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\hero.css",
+      "PackagePath": "staticwebassets\\css\\hero.css"
+    },
+    {
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\large-button.css",
+      "PackagePath": "staticwebassets\\css\\large-button.css"
+    },
+    {
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\large-outline-button.css",
+      "PackagePath": "staticwebassets\\css\\large-outline-button.css"
+    },
+    {
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\navigation-bar.css",
+      "PackagePath": "staticwebassets\\css\\navigation-bar.css"
+    },
+    {
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\order.css",
+      "PackagePath": "staticwebassets\\css\\order.css"
+    },
+    {
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\packages.css",
+      "PackagePath": "staticwebassets\\css\\packages.css"
+    },
+    {
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\polaroid-showcase.css",
+      "PackagePath": "staticwebassets\\css\\polaroid-showcase.css"
+    },
+    {
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\reviews.css",
+      "PackagePath": "staticwebassets\\css\\reviews.css"
+    },
+    {
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Pictionary.Mvc.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Pictionary.Mvc.props",
+      "PackagePath": "build\\Pictionary.Mvc.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Pictionary.Mvc.props",
+      "PackagePath": "buildMultiTargeting\\Pictionary.Mvc.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Pictionary.Mvc.props",
+      "PackagePath": "buildTransitive\\Pictionary.Mvc.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
