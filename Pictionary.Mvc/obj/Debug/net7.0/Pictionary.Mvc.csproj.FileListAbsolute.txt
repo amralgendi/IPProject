@@ -28,3 +28,14 @@ C:\Users\amrag\Desktop\pictionary-mvc\Pictionary.Mvc\obj\Debug\net7.0\refint\Pic
 C:\Users\amrag\Desktop\pictionary-mvc\Pictionary.Mvc\obj\Debug\net7.0\Pictionary.Mvc.pdb
 C:\Users\amrag\Desktop\pictionary-mvc\Pictionary.Mvc\obj\Debug\net7.0\Pictionary.Mvc.genruntimeconfig.cache
 C:\Users\amrag\Desktop\pictionary-mvc\Pictionary.Mvc\obj\Debug\net7.0\ref\Pictionary.Mvc.dll
+C:\Users\Amr\OneDrive - Faculty of Engineering Ain Shams University\Projects - Programming\IP Team\amr project\IPProject\Pictionary.Mvc\obj\Debug\net7.0\Pictionary.Mvc.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Amr\OneDrive - Faculty of Engineering Ain Shams University\Projects - Programming\IP Team\amr project\IPProject\Pictionary.Mvc\obj\Debug\net7.0\Pictionary.Mvc.AssemblyInfoInputs.cache
+C:\Users\Amr\OneDrive - Faculty of Engineering Ain Shams University\Projects - Programming\IP Team\amr project\IPProject\Pictionary.Mvc\obj\Debug\net7.0\Pictionary.Mvc.AssemblyInfo.cs
+C:\Users\Amr\OneDrive - Faculty of Engineering Ain Shams University\Projects - Programming\IP Team\amr project\IPProject\Pictionary.Mvc\obj\Debug\net7.0\Pictionary.Mvc.csproj.CoreCompileInputs.cache
+C:\Users\Amr\OneDrive - Faculty of Engineering Ain Shams University\Projects - Programming\IP Team\amr project\IPProject\Pictionary.Mvc\obj\Debug\net7.0\Pictionary.Mvc.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Amr\OneDrive - Faculty of Engineering Ain Shams University\Projects - Programming\IP Team\amr project\IPProject\Pictionary.Mvc\obj\Debug\net7.0\Pictionary.Mvc.RazorAssemblyInfo.cache
+C:\Users\Amr\OneDrive - Faculty of Engineering Ain Shams University\Projects - Programming\IP Team\amr project\IPProject\Pictionary.Mvc\obj\Debug\net7.0\Pictionary.Mvc.RazorAssemblyInfo.cs
+C:\Users\Amr\OneDrive - Faculty of Engineering Ain Shams University\Projects - Programming\IP Team\amr project\IPProject\Pictionary.Mvc\obj\Debug\net7.0\Pictionary.Mvc.sourcelink.json
+C:\Users\Amr\OneDrive - Faculty of Engineering Ain Shams University\Projects - Programming\IP Team\amr project\IPProject\Pictionary.Mvc\obj\Debug\net7.0\Pictionary.Mvc.dll
+C:\Users\Amr\OneDrive - Faculty of Engineering Ain Shams University\Projects - Programming\IP Team\amr project\IPProject\Pictionary.Mvc\obj\Debug\net7.0\refint\Pictionary.Mvc.dll
+C:\Users\Amr\OneDrive - Faculty of Engineering Ain Shams University\Projects - Programming\IP Team\amr project\IPProject\Pictionary.Mvc\obj\Debug\net7.0\Pictionary.Mvc.pdb

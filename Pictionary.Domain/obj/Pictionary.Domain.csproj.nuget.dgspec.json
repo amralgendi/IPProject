@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Domain\\Pictionary.Domain.csproj": {}
+    "C:\\Users\\Amr\\OneDrive - Faculty of Engineering Ain Shams University\\Projects - Programming\\IP Team\\amr project\\IPProject\\Pictionary.Domain\\Pictionary.Domain.csproj": {}
   },
   "projects": {
-    "c:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Domain\\Pictionary.Domain.csproj": {
+    "C:\\Users\\Amr\\OneDrive - Faculty of Engineering Ain Shams University\\Projects - Programming\\IP Team\\amr project\\IPProject\\Pictionary.Domain\\Pictionary.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Domain\\Pictionary.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Amr\\OneDrive - Faculty of Engineering Ain Shams University\\Projects - Programming\\IP Team\\amr project\\IPProject\\Pictionary.Domain\\Pictionary.Domain.csproj",
         "projectName": "Pictionary.Domain",
-        "projectPath": "c:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Domain\\Pictionary.Domain.csproj",
-        "packagesPath": "C:\\Users\\amrag\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Domain\\obj\\",
+        "projectPath": "C:\\Users\\Amr\\OneDrive - Faculty of Engineering Ain Shams University\\Projects - Programming\\IP Team\\amr project\\IPProject\\Pictionary.Domain\\Pictionary.Domain.csproj",
+        "packagesPath": "C:\\Users\\Amr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Amr\\OneDrive - Faculty of Engineering Ain Shams University\\Projects - Programming\\IP Team\\amr project\\IPProject\\Pictionary.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\amrag\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Amr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -48,12 +50,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

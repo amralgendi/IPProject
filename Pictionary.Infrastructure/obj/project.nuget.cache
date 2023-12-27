@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "eqZUInhqQVKctA4mMq+gTfiq5RqdAcYnZYorHuk8HDHtGiii2aWd6Tfz9vMftdHEEG7lDHbLiscQbukLo4SPvw==",
+  "dgSpecHash": "mjWq8Q5T9wMZwBmpIojlbVyNYWI/LZglg3Ax+2hQI8fNYWb6XhlCTBgJPywaXL5UoPRkSiaTRUR4SZrAiurE/Q==",
   "success": true,
-  "projectFilePath": "c:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Infrastructure\\Pictionary.Infrastructure.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Amr\\OneDrive - Faculty of Engineering Ain Shams University\\Projects - Programming\\IP Team\\amr project\\IPProject\\Pictionary.Infrastructure\\Pictionary.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Amr\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\Amr\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\Amr\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512"
+  ],
   "logs": []
 }
