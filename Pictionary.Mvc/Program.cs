@@ -1,7 +1,21 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Pictionary.Application;
+using Pictionary.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services
+    .AddApplication()
+    .AddInfrastructure()
+    .AddControllersWithViews();
+
+builder.Services
+    .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.Cookie.Name = "Pictionary";
+        options.LoginPath = "/auth/login";
+    });
 
 var app = builder.Build();
 
@@ -18,6 +32,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ouegVVvl2sboVt/jTKEWjSTGBHFfhNPUfxFTE5HT+DQ=",
+  "Hash": "wnhr82pt4WW0JHPXyMpqdOeHSEg1uZ1VIy7cPcopAdE=",
   "Source": "Pictionary.Mvc",
   "BasePath": "_content/Pictionary.Mvc",
   "Mode": "Default",
@@ -187,6 +187,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\spinner.svg"
     },
     {
+      "Identity": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\buttons.css",
+      "SourceId": "Pictionary.Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\",
+      "BasePath": "_content/Pictionary.Mvc",
+      "RelativePath": "css/buttons.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\buttons.css"
+    },
+    {
       "Identity": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\hero.css",
       "SourceId": "Pictionary.Mvc",
       "SourceType": "Discovered",
@@ -204,12 +221,12 @@
       "OriginalItemSpec": "wwwroot\\css\\hero.css"
     },
     {
-      "Identity": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\large-button.css",
+      "Identity": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\input.css",
       "SourceId": "Pictionary.Mvc",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\",
       "BasePath": "_content/Pictionary.Mvc",
-      "RelativePath": "css/large-button.css",
+      "RelativePath": "css/input.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -218,15 +235,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\large-button.css"
+      "OriginalItemSpec": "wwwroot\\css\\input.css"
     },
     {
-      "Identity": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\large-outline-button.css",
+      "Identity": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\log-in.css",
       "SourceId": "Pictionary.Mvc",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\",
       "BasePath": "_content/Pictionary.Mvc",
-      "RelativePath": "css/large-outline-button.css",
+      "RelativePath": "css/log-in.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -235,7 +252,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\large-outline-button.css"
+      "OriginalItemSpec": "wwwroot\\css\\log-in.css"
     },
     {
       "Identity": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\navigation-bar.css",
@@ -321,6 +338,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\reviews.css"
+    },
+    {
+      "Identity": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\sign-up.css",
+      "SourceId": "Pictionary.Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\",
+      "BasePath": "_content/Pictionary.Mvc",
+      "RelativePath": "css/sign-up.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\sign-up.css"
     },
     {
       "Identity": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\site.css",

@@ -1,89 +1,123 @@
 @{
-    ViewData["Title"] = "Order Page";
+    ViewData["Title"] = "Sign up Page";
 }
 
 @section styles {
-    <link rel="stylesheet" href="~/css/order.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/polaroid-showcase.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/input.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/log-in.css" asp-append-version="true" />
 }
 
-<div class="order-container">
-    @* {imageFiles.length === 0 ? (
-    <> *@
-    <div class="order-description">
-        <h1 class="order-title">Order Your Polaroids Today!</h1>
-        <p class="order-text">
-            Choose from our selection of beautiful polaroids that you can cherish
-            for years to come.
+<div class="log-in-container">
+    <div class="log-in-form-container">
+      <div class="log-in-form-loginFormHeader">
+        <h1 class="log-in-form-loginFormHeaderTitle">Welcome Back!</h1>
+        <p class="log-in-form-loginFormHeaderSubtitle">
+          Please enter your details
         </p>
-    </div>
-    <div class="order-shipping">
-        <h3 class="order-subtitle">
-            Shipping Available in Cairo & Alexandria
-        </h3>
-        <p class="order-text">
-            We offer shipping to customers in Cairo and Alexandria for a flat rate
-            of 50 EGP in Cairo and 60 EGP in Alexandria. Delivery is guaranteed
-            within one week of placing your order.
-        </p>
-        <p class="order-steps">
-            To get started, upload your photos and choose between our wide and
-            mini polaroid frames. We'll turn your photos into beautiful polaroids
-            that you can cherish for years to come.
-        </p>
-    </div>
-    <div class="order-polaroidsContainer">
-        <div class="polaroid-showcase-container">
-            <img
-                src="~/assets/images/miniPolaroid.jpg"
-                alt="polaroid"
-                class="polaroid-showcase-mini"
-            />
-            <div class="polaroid-showcase-details">
-                <h3 class="polaroid-showcase-title">Mini Polaroid</h3>
-                <p class="polaroid-showcase-text">
-                    40 EGP per Picture
-                </p>
-                <p class="polaroid-showcase-text">
-                    Frame Size: 2.13 x 3.39``
-                </p>
+      </div>
+        @using (Html.BeginForm("login", "auth", FormMethod.Post, new { @class = "log-in-form-loginFormBody" }))
+        {
+            <div class="input-container" >
+                <label class="input-label" htmlFor="email">
+                    Email
+                </label>
+
+                <input
+                    class="input-input"  @* ${error && classes.error} ${error && classes.shakeAnimation}}`} *@
+                    type="email"
+                    placeholder="example@example.com"
+                    id="email"
+                    @* onChange={onChange} *@
+                    name="email"
+                />
+                @* {error && <span class="input-errorMessage">{error}</span>} *@
             </div>
-        </div>
-        <div class="polaroid-showcase-container">
-            <img
-                src="~/assets/images/widePolaroid.jpg"
-                alt="polaroid"
-                class="polaroid-showcase-wide"
-            />
-            <div class="polaroid-showcase-details">
-                <h3 class="polaroid-showcase-title">Wide Polaroid</h3>
-                <p class="polaroid-showcase-text">
-                    45 EGP per Picture
-                </p>
-                <p class="polaroid-showcase-text">
-                    Frame Size: 4.25 x 3.39``
-                </p>
+            <div class="input-container" >
+                <label class="input-label" htmlFor="password">
+                    Password
+                </label>
+
+                <input
+                    class="input-input"  @* ${error && classes.error} ${error && classes.shakeAnimation}}`} *@
+                    type="password"
+                    placeholder="password"
+                    id="password"
+                    @* onChange={onChange} *@
+                    name="password"
+                />
+                @* {error && <span class="input-errorMessage">{error}</span>} *@
             </div>
+            <button type="submit" class="stretched-button-container">
+                <span class="stretched-button-text">Log in</span>
+            </button>
+        }
+        @* <form class="log-in-form-loginFormBody">
+        <div class="log-in-form-nameContainer">
+          <InputField
+            type={"text"}
+            label={"First Name"}
+            name={"firstName"}
+            placeholder="Jane"
+            onChange={(event) => handleInputChange(event)}
+            class="log-in-form-nameInput"
+          />
+          <InputField
+            type={"text"}
+            label={"Last Name"}
+            name={"lastName"}
+            placeholder="Doe"
+            onChange={(event) => handleInputChange(event)}
+            class="log-in-form-nameInput"
+          />
         </div>
-    </div>
-    @using (Html.BeginForm("upload-file", "order", FormMethod.Post, new { enctype = "multipart/form-data" }))
-    {
-        <div>
-            @Html.TextBox("file", "", new {  type= "file"}) <br />
-            <input type="submit" value="Upload" />
-        </div>
-    }
-    @* <UploadSection handleImageUpload={handleImageUpload} /> *@
-    @* </>
-    ) : (
-    <>
-        <OrderingConfig
-        imageFiles={imageFiles}
-        removeImage={removeImage}
-        handleImageUpload={handleImageUpload}
-        handleFrameSelection={handleFrameSelection}
+        <InputField
+          type={"email"}
+          label={"Email"}
+          name={"email"}
+          placeholder="example@example.com"
+          onChange={(event) => handleInputChange(event)}
         />
-        <BottomTab imageFiles={imageFiles} quantity={quantity} />
-    </>
-    )} *@
+        <InputField
+          type={"tel"}
+          label={"Phone Number"}
+          name={"phoneNumber"}
+          placeholder="Enter Your Phone Number"
+          onChange={(event) => handleInputChange(event)}
+        />
+        <InputField
+          type={"password"}
+          label={"Password"}
+          name={"password"}
+          placeholder="Enter Your Password"
+          onChange={(event) => handleInputChange(event)}
+        />
+        <InputField
+          type={"password"}
+          label={"Confirm Password"}
+          name={"confirmPassword"}
+          placeholder="Confirm Your Password"
+          onChange={(event) => handleInputChange(event)}
+        />
+        <div class="log-in-form-termsAndConditions">
+          <input
+            type="checkbox"
+            id="termsAndConditions"
+            name="termsAndConditions"
+            value="termsAndConditions"
+            onChange={(event) => handleInputChange(event)}
+          />
+          <label htmlFor="termsAndConditions">
+            I agree to the <a href="#">Terms and Conditions</a>
+          </label>
+        </div>
+        <div class="log-in-form-buttonsContainer">
+          <StretchedButton
+            type="submit"
+            text={"Sign Up"}
+            onClick={handleSubmit}
+            loading={loading}
+          />
+        </div>
+      </form> *@
+    </div>
 </div>

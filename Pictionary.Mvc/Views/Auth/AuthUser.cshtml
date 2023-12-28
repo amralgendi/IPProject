@@ -1,0 +1,18 @@
+@model Pictionary.Domain.UserModel.User
+@{
+    ViewData["Title"] = "Sign up Page";
+}
+
+@section styles {
+    <link rel="stylesheet" href="~/css/input.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/log-in.css" asp-append-version="true" />
+}
+
+<div class="log-in-container">
+  <div class="log-in-form-container">
+    <p>Name: @(Model.FirstName + ' ' + Model.LastName)</p>
+    <p>Email: @Model.Email</p>
+    <p>Role: @Model.Role</p>
+    <p>Phone Number: @Model.PhoneNumber</p>
+  </div>
+</div>

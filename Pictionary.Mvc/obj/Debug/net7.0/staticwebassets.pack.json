@@ -37,16 +37,20 @@
       "PackagePath": "staticwebassets\\assets\\spinner.svg"
     },
     {
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\buttons.css",
+      "PackagePath": "staticwebassets\\css\\buttons.css"
+    },
+    {
       "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\hero.css",
       "PackagePath": "staticwebassets\\css\\hero.css"
     },
     {
-      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\large-button.css",
-      "PackagePath": "staticwebassets\\css\\large-button.css"
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\input.css",
+      "PackagePath": "staticwebassets\\css\\input.css"
     },
     {
-      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\large-outline-button.css",
-      "PackagePath": "staticwebassets\\css\\large-outline-button.css"
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\log-in.css",
+      "PackagePath": "staticwebassets\\css\\log-in.css"
     },
     {
       "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\navigation-bar.css",
@@ -67,6 +71,10 @@
     {
       "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\reviews.css",
       "PackagePath": "staticwebassets\\css\\reviews.css"
+    },
+    {
+      "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\sign-up.css",
+      "PackagePath": "staticwebassets\\css\\sign-up.css"
     },
     {
       "Id": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Mvc\\wwwroot\\css\\site.css",

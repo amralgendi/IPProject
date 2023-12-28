@@ -1,21 +1,121 @@
+@model SignUpRequest
+
 @{
     ViewData["Title"] = "Sign up Page";
 }
 
 @section styles {
+    <link rel="stylesheet" href="~/css/input.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/sign-up.css" asp-append-version="true" />
 }
 
 <div class="sign-up-container">
-<div class="sign-up-form-signupContainer">
+    <div class="sign-up-form-signupContainer">
       <div class="sign-up-form-signupFormHeader">
         <h1 class="sign-up-form-signupFormHeaderTitle">Create an Account</h1>
         <p class="sign-up-form-signupFormHeaderSubtitle">
           Please enter your details to sign up
         </p>
       </div>
-      @Html.BeginForm()
-      <form class="sign-up-form-signupFormBody">
+        @using (Html.BeginForm("signup", "auth", FormMethod.Post, new { @class = "sign-up-form-signupFormBody" }))
+        {
+            <div class="sign-up-form-nameContainer">
+                <div class="sign-up-form-nameInput input-container" >
+                    <label class="input-label" htmlFor="firstName">
+                        First Name
+                    </label>
+
+                    <input
+                        class="input-input"  @* ${error && classes.error} ${error && classes.shakeAnimation}}`} *@
+                        type="text"
+                        placeholder="Jane"
+                        id="firstName"
+                        @* onChange={onChange} *@
+                        name="firstName"
+                    />
+                    @* {error && <span class="input-errorMessage">{error}</span>} *@
+                </div>
+                <div class="input-container sign-up-form-nameInput" >
+                    <label class="input-label" htmlFor="lastName">
+                        Last Name
+                    </label>
+
+                    <input
+                        class="input-input"  @* ${error && classes.error} ${error && classes.shakeAnimation}}`} *@
+                        type="text"
+                        placeholder="Doe"
+                        id="lastName"
+                        @* onChange={onChange} *@
+                        name="lastName"
+                    />
+                    @* {error && <span class="input-errorMessage">{error}</span>} *@
+                </div>
+            </div>
+            <div class="input-container" >
+                <label class="input-label" htmlFor="email">
+                    Email
+                </label>
+
+                <input
+                    class="input-input"  @* ${error && classes.error} ${error && classes.shakeAnimation}}`} *@
+                    type="email"
+                    placeholder="example@example.com"
+                    id="email"
+                    @* onChange={onChange} *@
+                    name="email"
+                />
+                @* {error && <span class="input-errorMessage">{error}</span>} *@
+            </div>
+            <div class="input-container" >
+                <label class="input-label" htmlFor="phoneNumber">
+                    Phone Number
+                </label>
+
+                <input
+                    class="input-input"  @* ${error && classes.error} ${error && classes.shakeAnimation}}`} *@
+                    type="tel"
+                    placeholder="01234567890"
+                    id="phoneNumber"
+                    @* onChange={onChange} *@
+                    name="phoneNumber"
+                />
+                @* {error && <span class="input-errorMessage">{error}</span>} *@
+            </div>
+            <div class="input-container" >
+                <label class="input-label" htmlFor="password">
+                    Password
+                </label>
+
+                <input
+                    class="input-input"  @* ${error && classes.error} ${error && classes.shakeAnimation}}`} *@
+                    type="password"
+                    placeholder="password"
+                    id="password"
+                    @* onChange={onChange} *@
+                    name="password"
+                />
+                @* {error && <span class="input-errorMessage">{error}</span>} *@
+            </div>
+            <div class="input-container" >
+                <label class="input-label" htmlFor="confirmPassword">
+                    Confirm Password
+                </label>
+
+                <input
+                    class="input-input"  @* ${error && classes.error} ${error && classes.shakeAnimation}}`} *@
+                    type="password"
+                    placeholder="password"
+                    id="confirmPassword"
+                    @* onChange={onChange} *@
+                    name="confirmPassword"
+                />
+                @* {error && <span class="input-errorMessage">{error}</span>} *@
+            </div>
+            <button type="submit" class="stretched-button-container">
+                <span class="stretched-button-text">Sign up</span>
+            </button>
+        }
+        @* <form class="sign-up-form-signupFormBody">
         <div class="sign-up-form-nameContainer">
           <InputField
             type={"text"}
@@ -82,6 +182,6 @@
             loading={loading}
           />
         </div>
-      </form>
+      </form> *@
     </div>
 </div>
