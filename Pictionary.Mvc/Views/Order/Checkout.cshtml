@@ -2,5 +2,92 @@
     ViewData["Title"] = "Checkout Page";
 }
 
-<div>
-</div>
+<div
+      className={classes.container}
+      style={{ backgroundImage: `url(${background})` }}
+    >
+      <div className={classes.container}>
+      <h1 className={classes.title}>Shipping Details</h1>
+      <p className={classes.subtitle}>
+        Please enter your shipping details below
+      </p>
+      <AddressForm
+        errors={errors}
+        handleInputChange={handleInputChange}
+        formData={formData}
+      />
+    </div>
+      <div className={classes.container}>
+      <div className={classes.orderSummaryContainer}>
+        <div className={classes.orderSummaryHeader}>
+          <h1 className={classes.orderSummaryHeaderTitle}>Order Summary</h1>
+        </div>
+        <div className={classes.orderSummaryBody}>
+          <div className={classes.subHeader}>
+            <h3 className={classes.subHeaderTitle}>Mini Pictures</h3>
+            <p className={classes.subHeaderPrice}>
+              {numOfMini} x {35} EGP
+            </p>
+          </div>
+          <div className={classes.subHeader}>
+            <h3 className={classes.subHeaderTitle}>Wide Pictures</h3>
+            <p className={classes.subHeaderPrice}>
+              {numOfWide} x {40} EGP
+            </p>
+          </div>
+          <div className={classes.subHeader}>
+            <h3 className={classes.subHeaderTitle}>Total Pictures</h3>
+            <p className={classes.subHeaderPrice}>{totalNumOfFrames}</p>
+          </div>
+        </div>
+
+        <div className={classes.orderSummaryBody}>
+          <div className={classes.subHeader}>
+            <h3 className={classes.subHeaderTitle}>Subtotal</h3>
+            <p className={classes.subHeaderPrice}>{totalPrice} EGP</p>
+          </div>
+          <div className={classes.subHeader}>
+            <h3 className={classes.subHeaderTitle}>Shipping</h3>
+            <p className={classes.subHeaderPrice}>{shippingPrice} EGP</p>
+          </div>
+
+          <div className={classes.subHeader}>
+            <h3 className={classes.subHeaderTitle}>Total</h3>
+            <p className={classes.subHeaderPrice}>
+              {totalPrice + shippingPrice} EGP
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className={classes.checkoutButtonContainer}>
+        <button
+      type={type}
+      onClick={onClick}
+      className={`${classes.container} ${className}`}
+    >
+      {!loading ? (
+        <span className={classes.text}>{children ? children : text}</span>
+      ) : (
+        <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flex: 1,
+      }}
+    >
+      <img
+        src={spinner}
+        alt="Loading..."
+        style={{ width: size, height: size, margin: 0, padding: 0 }}
+      />
+    </div>
+      )}
+    </button>
+      </div>
+    </div>
+    </div>
+
+    <div>
+      <p>Error: {message}</p>
+    </div>

@@ -1,0 +1,39 @@
+<div className={classes.container}>
+    <div className={classes.loginFormHeader}>
+        <h1 className={classes.loginFormHeaderTitle}>Welcome Back!</h1>
+        <p className={classes.loginFormHeaderSubtitle}>
+            Please enter your details
+        </p>
+    </div>
+    <form className={classes.loginFormBody}>
+        <div className={`${classes.container} ${className}`}>
+            <label className={classes.label} htmlFor={name}>
+                {label}
+            </label>
+
+            <input className={`${classes.input} ${error && classes.error} ${ error && classes.shakeAnimation }}`}
+                type={type} placeholder={placeholder} id={name} onChange={onChange} name={name} />
+            {error && <span className="errorMessage">{error}</span>}
+        </div>
+        <div className={`${classes.container} ${className}`}>
+            <label className={classes.label} htmlFor={name}>
+                {label}
+            </label>
+
+            <input className={`${classes.input} ${error && classes.error} ${ error && classes.shakeAnimation }}`}
+                type={type} placeholder={placeholder} id={name} onChange={onChange} name={name} />
+            {error && <span className="errorMessage">{error}</span>}
+        </div>
+        <div className={classes.buttonsContainer}>
+            <button type={type} onClick={onClick} className={`${classes.container} ${className}`}>
+                {!loading ? (
+                <span className={classes.text}>{children ? children : text}</span>
+                ) : (
+                <div style={{ display: "flex" , alignItems: "center" , justifyContent: "center" , flex: 1, }}>
+                    <img src={spinner} alt="Loading..." style={{ width: size, height: size, margin: 0, padding: 0 }} />
+                </div>
+                )}
+            </button>
+        </div>
+    </form>
+</div>
