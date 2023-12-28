@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Domain\\Pictionary.Domain.csproj": {}
+    "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Domain\\Pictionary.Domain.csproj": {}
   },
   "projects": {
-    "c:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Domain\\Pictionary.Domain.csproj": {
+    "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Domain\\Pictionary.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Domain\\Pictionary.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Domain\\Pictionary.Domain.csproj",
         "projectName": "Pictionary.Domain",
-        "projectPath": "c:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Domain\\Pictionary.Domain.csproj",
+        "projectPath": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Domain\\Pictionary.Domain.csproj",
         "packagesPath": "C:\\Users\\amrag\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Domain\\obj\\",
+        "outputPath": "C:\\Users\\amrag\\Desktop\\pictionary-mvc\\Pictionary.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\amrag\\AppData\\Roaming\\NuGet\\NuGet.Config"

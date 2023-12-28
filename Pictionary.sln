@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pictionary.Infrastructure",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pictionary.Mvc", "Pictionary.Mvc\Pictionary.Mvc.csproj", "{8AE9714D-1141-4676-9F1C-98CEB360A525}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pictionary.Contracts", "Pictionary.Contracts\Pictionary.Contracts.csproj", "{A6B750E4-2A6B-4888-AC4C-E86952B5E222}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{8AE9714D-1141-4676-9F1C-98CEB360A525}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AE9714D-1141-4676-9F1C-98CEB360A525}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AE9714D-1141-4676-9F1C-98CEB360A525}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6B750E4-2A6B-4888-AC4C-E86952B5E222}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6B750E4-2A6B-4888-AC4C-E86952B5E222}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6B750E4-2A6B-4888-AC4C-E86952B5E222}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6B750E4-2A6B-4888-AC4C-E86952B5E222}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
