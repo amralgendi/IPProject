@@ -1,0 +1,90 @@
+@{
+    ViewData["Title"] = "Signup Page";
+}
+
+<div className={classes.container}>
+    <div className={classes.signupContainer}>
+        <div className={classes.signupFormHeader}>
+            <h1 className={classes.signupFormHeaderTitle}>Create an Account</h1>
+            <p className={classes.signupFormHeaderSubtitle}>
+                Please enter your details to sign up
+            </p>
+        </div>
+        <form className={classes.signupFormBody}>
+            <div className={classes.nameContainer}>
+
+                <div className={`${classes.container} ${className}`}>
+                    <label className={classes.label} htmlFor={name}>
+                        {label}
+                    </label>
+
+                    <input className={`${classes.input} ${error && classes.error} ${ error && classes.shakeAnimation
+                        }}`} type={type} placeholder={placeholder} id={name} onChange={onChange} name={name} />
+                    {error && <span className="errorMessage">{error}</span>}
+                </div>
+                <div className={`${classes.container} ${className}`}>
+                    <label className={classes.label} htmlFor={name}>
+                        {label}
+                    </label>
+
+                    <input className={`${classes.input} ${error && classes.error} ${ error && classes.shakeAnimation
+                        }}`} type={type} placeholder={placeholder} id={name} onChange={onChange} name={name} />
+                    {error && <span className="errorMessage">{error}</span>}
+                </div>
+            </div>
+            <div className={`${classes.container} ${className}`}>
+                <label className={classes.label} htmlFor={name}>
+                    {label}
+                </label>
+
+                <input className={`${classes.input} ${error && classes.error} ${ error && classes.shakeAnimation }}`}
+                    type={type} placeholder={placeholder} id={name} onChange={onChange} name={name} />
+                {error && <span className="errorMessage">{error}</span>}
+            </div>
+            <div className={`${classes.container} ${className}`}>
+                <label className={classes.label} htmlFor={name}>
+                    {label}
+                </label>
+
+                <input className={`${classes.input} ${error && classes.error} ${ error && classes.shakeAnimation }}`}
+                    type={type} placeholder={placeholder} id={name} onChange={onChange} name={name} />
+                {error && <span className="errorMessage">{error}</span>}
+            </div>
+            <div className={`${classes.container} ${className}`}>
+                <label className={classes.label} htmlFor={name}>
+                    {label}
+                </label>
+
+                <input className={`${classes.input} ${error && classes.error} ${ error && classes.shakeAnimation }}`}
+                    type={type} placeholder={placeholder} id={name} onChange={onChange} name={name} />
+                {error && <span className="errorMessage">{error}</span>}
+            </div>
+            <div className={`${classes.container} ${className}`}>
+                <label className={classes.label} htmlFor={name}>
+                    {label}
+                </label>
+
+                <input className={`${classes.input} ${error && classes.error} ${ error && classes.shakeAnimation }}`}
+                    type={type} placeholder={placeholder} id={name} onChange={onChange} name={name} />
+                {error && <span className="errorMessage">{error}</span>}
+            </div>
+            <div className={classes.termsAndConditions}>
+                <input type="checkbox" id="termsAndConditions" name="termsAndConditions" value="termsAndConditions"
+                    onChange={(event)=> handleInputChange(event)}
+                />
+                <label htmlFor="termsAndConditions">
+                    I agree to the <a href="#">Terms and Conditions</a>
+                </label>
+            </div>
+            <div className={classes.buttonsContainer}>
+                <button type={type} onClick={onClick} className={`${classes.container} ${className}`}>
+                    {!loading ? (
+                    <span className={classes.text}>{children ? children : text}</span>
+                    ) : (
+                    <LoadingSpinner />
+                    )}
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
