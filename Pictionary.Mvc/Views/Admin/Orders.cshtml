@@ -1,0 +1,55 @@
+@model List<Pictionary.Domain.OrderModel.Order>
+@{
+    ViewData["Title"] = "Admin | All Orders Page";
+}
+
+@section styles {
+    <link rel="stylesheet" href="~/css/admin-all-orders.css" asp-append-version="true" />
+}
+
+<div class="admin-orders-container">
+      <div class="admin-orders-header">
+        <h1 class="admin-orders-title">All Orders</h1>
+        <div class="admin-orders-filterContainer">
+          <select
+            class="admin-orders-filter"
+            onChange={handleStatusChange}
+            value={currentStatus}
+          >
+            @* <option value="all">All</option>
+            {status.map((status) => (
+              <option key={status} value={status}>
+                {status}
+              </option>
+            ))} *@
+          </select>
+        </div>
+        <div class="admin-orders-pagination">
+          <span>
+            Page {currentPage} of {totalPages || 1}
+          </span>
+          <button
+            class="admin-orders-button"
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+          >
+            Previous
+          </button>
+          <button
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            class="admin-orders-button"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+
+      <div class="admin-orders-ordersContainer">
+        {orders.map((order) => (
+          <div key={order._id} class="admin-orders-orderItem">
+            <UserOrder fetchOrders={fetchOrders} {...order} />
+          </div>
+        ))}
+      </div>
+    </div>

@@ -4,6 +4,7 @@ using Mediator;
 using Pictionary.Application.Auth.Interfaces;
 using Pictionary.Application.Auth.Queries.GetUser;
 using Pictionary.Domain.UserModel;
+using Pictionary.Domain.UserModel.ValueObjects;
 
 public class GetUserQueryHandler : IQueryHandler<GetUserQuery, User>
 {
@@ -16,9 +17,7 @@ public class GetUserQueryHandler : IQueryHandler<GetUserQuery, User>
 
     public async ValueTask<User> Handle(GetUserQuery query, CancellationToken cancellationToken)
     {
-        var user = await _userRepository.GetByEmail(query.Email)
+        return await _userRepository.GetById(UserId.Parse(query.Id))
             ?? throw new Exception("User not Found");
-
-        return user;
     }
 }

@@ -35,83 +35,84 @@
                         </HashLink> *@
                     </li>
                     <li class="navigation-navItem">
-                        @Html.ActionLink("Packages", "", "", null, null, "packages", null, new
+                        @Html.ActionLink("Packages", "", "", null, null, "packages", null,
+                        new
                             {
                                 @class =
                                  "navigation-navLink"
                             })
-                        @* <HashLink
-                        smooth
-                        to="/#packages"
-                        class="navigation-navLink"
-                        scroll={(el) => scrollWithOffset(el)}
-                        >
-                        Packages
-                        </HashLink> *@
                     </li>
                     <li class="navigation-navItem">
-                        @Html.ActionLink("Reviews", "", "", null, null, "reviews", null, new
+                        @Html.ActionLink("Reviews", "", "", null, null, "reviews", null,
+                        new
                             {
                                 @class =
                                  "navigation-navLink"
                             })
-                        @* <HashLink
-                        smooth
-                        to="/#reviews"
-                        class="navigation-navLink"
-                        scroll={(el) => scrollWithOffset(el)}
-                        >
-                        Reviews
-                        </HashLink> *@
                     </li>
                     <li class="navigation-navItem">
-                        @Html.ActionLink("Contact Us", "", "", null, null, "contact", null, new
-                            {
-                                @class =
-                                 "navigation-navLink"
-                            })
-                        @* <HashLink
-                        smooth
-                        to="/#contact"
-                        scroll={(el) => scrollWithOffset(el)}
-                        class="navigation-navLink"
-                        >
-                        Contact Us
-                        </HashLink> *@
+                        @Html.ActionLink("Contact Us", "", "", null, null, "contact", null,
+                        new
+                        {
+                            @class =
+                                "navigation-navLink"
+                        })
                     </li>
                 </ul>
             </div>
             <div class="navigation-column">
                 <ul class="navigation-navItemsContainer">
-                    @* <li class="navigation-navItem">
-                    {isAuthenticated ? (
-                    <NavLink to="/order" class="navigation-navLink">
-                    Order Now
-                    </NavLink>
-                    ) : (
-                    <NavLink to="/login" class="navigation-navLink">
-                    Login
-                    </NavLink>
-                    )}
-                    </li> *@
+                    @if(User.Identity.IsAuthenticated)
+                    {
+                        <li class="navigation-navItem">
+                            @Html.ActionLink(
+                                "Profile",
+                                "",
+                                "profile",
+                                new {},
+                                new
+                                {
+                                    @class =
+                                    "navigation-navLink"
+                                })
+                        </li>
+                        <li class="navigation-navItem">
+                            @Html.ActionLink(
+                                "Log Out",
+                                "logout",
+                                "auth",
+                                new {},
+                                new
+                                {
+                                    @class =
+                                    "navigation-navLink"
+                                })
+                        </li>
+                    }
                     <li class="navigation-navItem">
-                        @* {!isAuthenticated ? (
-                        <NavLink to="/signup" class="navigation-navLink">
-                        Sign Up
-                        </NavLink>
-                        ) : (
-                        <NavLink to="/my-orders" class="navigation-navLink">
-                        My Orders
-                        </NavLink>
-                        )} *@
+                        @Html.ActionLink(
+                            !User.Identity.IsAuthenticated ? "Login in" : "Order Now",
+                            !User.Identity.IsAuthenticated ? "login" : "",
+                            !User.Identity.IsAuthenticated ? "auth" : "order",
+                            new {},
+                            new
+                            {
+                                @class =
+                                 "navigation-navLink"
+                            })
                     </li>
-                    @* {user && user.role === "admin" && (
                     <li class="navigation-navItem">
-                    <NavLink to="/admin" class="navigation-navLink">
-                    Admin
-                    </NavLink>
+                        @Html.ActionLink(
+                            !User.Identity.IsAuthenticated ? "Sign up" : "My Orders",
+                            !User.Identity.IsAuthenticated ? "signup" : "my-orders",
+                            !User.Identity.IsAuthenticated ? "auth" : "order",
+                            new {},
+                            new
+                            {
+                                @class =
+                                 "navigation-navLink"
+                            })
                     </li>
-                    )} *@
                 </ul>
             </div>
         </nav>

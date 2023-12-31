@@ -17,7 +17,9 @@ public class LogInQueryHandler : IQueryHandler<LogInQuery, User>
     {
         var user = await _userRepository.GetByEmail(query.Email)
             ?? throw new Exception("Invalid Email or Password");
-        
+
+        Console.WriteLine(user.Email);
+
         if(!user.Password.Equals(query.Password))
         {
             throw new Exception("Invalid Email or Password");

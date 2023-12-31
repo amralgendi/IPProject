@@ -35,22 +35,35 @@ public class AuthController : Controller
     [Authorize]
     public async Task<IActionResult> AuthUser()
     {
-        var email = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        var id = User.FindFirstValue(ClaimTypes.Sid);
 
-        if(email is null)
+        if(id is null)
         {
             return RedirectToAction("login");
         }
 
-        var req = new GetUserQuery(email);
+        var req = new GetUserQuery(id);
 
-        var user = await _mediator.Send(req);
-
-        return View(user);
+        try
+        {
+            var user = await _mediator.Send(req);
+            return View(user);
+        }
+        catch
+        {
+            return RedirectToAction("logout", new { });
+        }
     }
 
     public IActionResult SignUp()
     {
+        var email = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+        if(email is not null)
+        {
+            return RedirectToAction("authuser");
+        }
+
         return View();
     }
 
@@ -69,11 +82,18 @@ public class AuthController : Controller
 
         await _mediator.Send(command);
 
-        return RedirectToAction("login");
+        return View("login");
     }
 
     public IActionResult LogIn()
     {
+        var email = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+        if(email is not null)
+        {
+            return RedirectToAction("authuser");
+        }
+
         return View();
     }
 
@@ -89,7 +109,13 @@ public class AuthController : Controller
         var claims = new List<Claim>()
         {
             new(ClaimTypes.NameIdentifier, user.Email),
-            new(ClaimTypes.Name, user.Email),
+            new(ClaimTypes.Email, user.Email),
+            new(ClaimTypes.Sid, user.Id.Value.ToString()),
+            new(ClaimTypes.Name, $"{user.FirstName} {user.LastName}"),
+            new(ClaimTypes.GivenName, user.Id.Value.ToString()),
+            new(ClaimTypes.GivenName, user.FirstName),
+            new(ClaimTypes.Surname, user.LastName),
+            new(ClaimTypes.HomePhone, user.PhoneNumber),
             new(ClaimTypes.Role, user.Role),
         };
 
@@ -105,10 +131,9 @@ public class AuthController : Controller
                 IsPersistent = true,
             });
 
-        return View();
+        return RedirectToAction("", "");
     }
 
-    [HttpPost]
     public async Task<IActionResult> LogOut()
     {
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);

@@ -2,88 +2,173 @@
     ViewData["Title"] = "Order Page";
 }
 
+@model CreateOrderViewModel
+
 @section styles {
     <link rel="stylesheet" href="~/css/order.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/polaroid-showcase.css" asp-append-version="true" />
 }
 
 <div class="order-container">
-    @* {imageFiles.length === 0 ? (
-    <> *@
-    <div class="order-description">
-        <h1 class="order-title">Order Your Polaroids Today!</h1>
-        <p class="order-text">
-            Choose from our selection of beautiful polaroids that you can cherish
-            for years to come.
-        </p>
-    </div>
-    <div class="order-shipping">
-        <h3 class="order-subtitle">
-            Shipping Available in Cairo & Alexandria
-        </h3>
-        <p class="order-text">
-            We offer shipping to customers in Cairo and Alexandria for a flat rate
-            of 50 EGP in Cairo and 60 EGP in Alexandria. Delivery is guaranteed
-            within one week of placing your order.
-        </p>
-        <p class="order-steps">
-            To get started, upload your photos and choose between our wide and
-            mini polaroid frames. We'll turn your photos into beautiful polaroids
-            that you can cherish for years to come.
-        </p>
-    </div>
-    <div class="order-polaroidsContainer">
-        <div class="polaroid-showcase-container">
-            <img
-                src="~/assets/images/miniPolaroid.jpg"
-                alt="polaroid"
-                class="polaroid-showcase-mini"
-            />
-            <div class="polaroid-showcase-details">
-                <h3 class="polaroid-showcase-title">Mini Polaroid</h3>
-                <p class="polaroid-showcase-text">
-                    40 EGP per Picture
-                </p>
-                <p class="polaroid-showcase-text">
-                    Frame Size: 2.13 x 3.39``
-                </p>
-            </div>
-        </div>
-        <div class="polaroid-showcase-container">
-            <img
-                src="~/assets/images/widePolaroid.jpg"
-                alt="polaroid"
-                class="polaroid-showcase-wide"
-            />
-            <div class="polaroid-showcase-details">
-                <h3 class="polaroid-showcase-title">Wide Polaroid</h3>
-                <p class="polaroid-showcase-text">
-                    45 EGP per Picture
-                </p>
-                <p class="polaroid-showcase-text">
-                    Frame Size: 4.25 x 3.39``
-                </p>
-            </div>
-        </div>
-    </div>
-    @using (Html.BeginForm("upload-file", "order", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    @if(Model.Images.Any())
     {
-        <div>
-            @Html.TextBox("file", "", new {  type= "file"}) <br />
-            <input type="submit" value="Upload" />
-        </div>
+        @Html.BeginForm("", "order", FormMethod.Post, new { enctype = "multipart/form-data", @class = "frame-selection-container"})
+        {
+            <div class="frame-selection-header">
+                <h2 class="frame-selection-title">Select Your Polaroid Frames Size</h2>
+            </div>
+
+            <div class="frame-selection-uploadedImagesContainer">
+                @for (int i = 0; i < Model.PolaroidDetails.Count; i++)
+                {
+                    <div class="order-card-card">
+                        <div class="order-card-cardHeader">
+                            <h3>@(Model.PolaroidDetails[i].FileName[..3])...</h3>
+                            <img
+                            src="data:image/@Model.PolaroidDetails[i].Ext;base64, @Model.PolaroidDetails[i].DataBase64"
+                            alt="@Model.PolaroidDetails[i].FileName"
+                            class="order-card-image"
+                            />
+                        </div>
+                        @Html.HiddenFor(m => m.PolaroidDetails[i].FileName)
+                        @Html.HiddenFor(m => m.PolaroidDetails[i].Ext)
+                        @Html.HiddenFor(m => m.PolaroidDetails[i].DataBase64)
+                        <div class="order-card-frameSizeContainer">
+                            <div class="order-card-radioContainer">
+                            @Html.LabelFor(m => m.PolaroidDetails[i].Type, "Mini", new { @class = "order-card-text" })
+                            <br class="order-card-br" />
+                            @Html.RadioButtonFor(m => m.PolaroidDetails[i].Type, "MINI", new { @class="order-card-radio" })
+                            </div>
+
+                            <div class="order-card-radioContainer">
+                            @* <label class="order-card-text">Wide</label> *@
+                            @Html.LabelFor(m => m.PolaroidDetails[i].Type, "Wide", new { @class = "order-card-text" })
+                            <br class="order-card-br" />
+                            @Html.RadioButtonFor(m => m.PolaroidDetails[i].Type, "WIDE", new { @class="order-card-radio" })
+                            </div>
+                        </div>
+                    <div class="order-card-quantityContainer">
+                        <label class="order-card-text">Quantity</label>
+                        @Html.TextBoxFor(m => m.PolaroidDetails[i].Quantity, new { type = "number", @class="order-card-quantityInput"})
+                    </div>
+
+                    @* <button
+                        class="order-card-closeIconContainer"
+                        onClick={() => {
+                        removeImage(index);
+                        }}
+                    >
+                        <AiOutlineClose size={"30px"} class="order-card-closeIcon" />
+                    </button> *@
+                    </div>
+                }
+            </div>
+            <div class="bottom-tab-container">
+                <div class="bottom-tab-tab">
+                    <h4 class="bottom-tab-text"><span id="numberOfMini">@Model.PolaroidDetails.Sum(p => p.Type == "MINI" ? p.Quantity : 0)</span> Mini Polaroids</h4>
+                </div>
+
+                <div class="bottom-tab-tab">
+                    <h4 class="bottom-tab-text"><span id="numberOfWide">@Model.PolaroidDetails.Sum(p => p.Type == "MINI" ? 0 : p.Quantity)</span> Wide Polaroids</h4>
+                </div>
+                <div class="bottom-tab-tab">
+                    <h3 class="bottom-tab-numOfPhotos">@Model.PolaroidDetails.Count</h3>
+                    <h4 class="bottom-tab-text">Photos</h4>
+                </div>
+                <div class="bottom-tab-tab">
+                    <h4 class="bottom-tab-text">Total Price:</h4>
+                    <h3 class="bottom-tab-price"><span id="price">PRICE</span> EGP</h3>
+                </div>
+                <div class="bottom-tab-tab">
+                    <button type="submit" class="bottom-tab-checkoutButton">
+                        <span class = "bottom-tab-checkoutButtonText">Checkout</span>
+                    </button>
+                </div>
+            </div>
+        }
     }
-    @* <UploadSection handleImageUpload={handleImageUpload} /> *@
-    @* </>
-    ) : (
-    <>
-        <OrderingConfig
-        imageFiles={imageFiles}
-        removeImage={removeImage}
-        handleImageUpload={handleImageUpload}
-        handleFrameSelection={handleFrameSelection}
-        />
-        <BottomTab imageFiles={imageFiles} quantity={quantity} />
-    </>
-    )} *@
+    @if(!Model.Images.Any())
+    {
+        <div class="order-description">
+            <h1 class="order-title">Order Your Polaroids Today!</h1>
+            <p class="order-text">
+                Choose from our selection of beautiful polaroids that you can cherish
+                for years to come.
+            </p>
+        </div>
+        <div class="order-shipping">
+            <h3 class="order-subtitle">
+                Shipping Available in Cairo & Alexandria
+            </h3>
+            <p class="order-text">
+                We offer shipping to customers in Cairo and Alexandria for a flat rate
+                of 50 EGP in Cairo and 60 EGP in Alexandria. Delivery is guaranteed
+                within one week of placing your order.
+            </p>
+            <p class="order-steps">
+                To get started, upload your photos and choose between our wide and
+                mini polaroid frames. We'll turn your photos into beautiful polaroids
+                that you can cherish for years to come.
+            </p>
+        </div>
+        <div class="order-polaroidsContainer">
+            <div class="polaroid-showcase-container">
+                <img
+                    src="~/assets/images/miniPolaroid.jpg"
+                    alt="polaroid"
+                    class="polaroid-showcase-mini"
+                />
+                <div class="polaroid-showcase-details">
+                    <h3 class="polaroid-showcase-title">Mini Polaroid</h3>
+                    <p class="polaroid-showcase-text">
+                        40 EGP per Picture
+                    </p>
+                    <p class="polaroid-showcase-text">
+                        Frame Size: 2.13 x 3.39``
+                    </p>
+                </div>
+            </div>
+            <div class="polaroid-showcase-container">
+                <img
+                    src="~/assets/images/widePolaroid.jpg"
+                    alt="polaroid"
+                    class="polaroid-showcase-wide"
+                />
+                <div class="polaroid-showcase-details">
+                    <h3 class="polaroid-showcase-title">Wide Polaroid</h3>
+                    <p class="polaroid-showcase-text">
+                        45 EGP per Picture
+                    </p>
+                    <p class="polaroid-showcase-text">
+                        Frame Size: 4.25 x 3.39``
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        @using (Html.BeginForm("", "order", FormMethod.Post, new { enctype = "multipart/form-data", @id = "form" }))
+        {
+            <button type="button" class="large-button-container" id="order-btn">
+                <span class="large-button-text">Order Now</span>
+            </button>
+            <button type="submit" id="submit-btn" class="image-upload-input">
+            </button>
+            @Html.TextBoxFor(m => m.Images, new { type = "file", multiple = true, @class = "image-upload-input", id = "upload-files-input", accept="image/*" })
+            <script>
+                console.log("Hey");
+                const orderBtn = document.getElementById("order-btn");
+                const submitBtn = document.getElementById("submit-btn");
+                const input = document.getElementById("upload-files-input");
+                const form = document.getElementById("form");
+
+                orderBtn.addEventListener("click", () => {
+                    input.click()
+                }) 
+
+                input.addEventListener("change", () => {
+                    submitBtn.click()
+                })
+            </script>
+        }
+    }
 </div>

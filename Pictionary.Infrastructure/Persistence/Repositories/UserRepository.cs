@@ -1,53 +1,48 @@
 namespace Pictionary.Infrastructure.Persistence.Repositories;
 
+using Microsoft.EntityFrameworkCore;
 using Pictionary.Application.Auth.Interfaces;
 using Pictionary.Domain.UserModel;
+using Pictionary.Domain.UserModel.ValueObjects;
 
 public class UserRepository : IUserRepository
 {
-    private readonly List<User> _users;
+    private readonly PictionaryDbContext _dbContext;
 
-    public UserRepository()
+    public UserRepository(PictionaryDbContext dbContext)
     {
-        _users = new();
+        _dbContext = dbContext;
+        Console.WriteLine("Inide User Repository");
+        var user = User.CreateAdmin("Salah", "Hamada", "01122334456", "me@mohasalah.com", "checkcheck");
+        _dbContext.Add(user);
+
+        _dbContext.SaveChanges();
     }
 
-    public Task Create(User user)
+    public async Task Create(User user)
     {
-        if(_users.Any(u => user.Email == u.Email))
-        {
-            throw new Exception("User Exists");
-        }
-
-        _users.Add(user);
-
-        return Task.CompletedTask;
+        await _dbContext.AddAsync(user);
+        await _dbContext.SaveChangesAsync();
     }
 
     public async Task<IEnumerable<User>> GetAllMembers()
     {
-        await Task.CompletedTask;
-        return _users.FindAll(u => u.Role == "Member");
+        return await _dbContext.Users.Where(u => u.Role == "Member").ToListAsync();
     }
 
     public async Task<User?> GetByEmail(string email)
     {
-        await Task.CompletedTask;
-        return _users.Find(u => u.Email == email)
-            ?? null;
+        return await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == email);
+
     }
 
-    public Task Update(User user)
+    public async Task<User?> GetById(UserId id)
     {
-        var index = _users.FindIndex(u => user.Email == u.Email);
+        return await _dbContext.FindAsync<User>(id);
+    }
 
-        if(index < 0)
-        {
-            throw new Exception("User not Found");
-        }
-
-        _users[index] = user;
-
-        return Task.CompletedTask;    
+    public async Task Update(User user)
+    {
+        await _dbContext.SaveChangesAsync();
     }
 }

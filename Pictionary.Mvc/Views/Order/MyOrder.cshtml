@@ -1,0 +1,76 @@
+@{
+    ViewData["Title"] = "My Order";
+}
+@model List<Pictionary.Application.Orders.Queries.GetOrders.OrderDto>
+
+@section styles {
+    <link rel="stylesheet" href="~/css/my-orders.css" asp-append-version="true" />
+}
+
+<div class="my-orders-container">
+  <h1 class="my-orders-title">My Orders</h1>
+  <div class="my-orders-ordersContainer">
+    @foreach (var order in Model)
+    {
+      <div class="user-orders-container">
+
+        <div class="user-orders-header">
+          <h2 class="user-orders-title">Order #@order.Id</h2>
+          <h3 class="user-orders-status">@order.Status</h3>
+        </div>
+
+        <div class="user-orders-body">
+          <div class="user-orders-col">
+            <p class="user-orders-text">Total Quantity: @order.Polaroids.Sum(p => p.Quantity)</p>
+            @* <p class="user-orders-text">Wide Polaroids:  @order.Polaroids.Sum(p => p. == "WIDE" ? p.Quantity : 0)</p>
+            <p class="user-orders-text">Mini Polaroids: @order.Polaroids.Sum(p => p.Type == "MINI" ? p.Quantity : 0)</p> *@
+          </div>
+          @if(order.Address is not null)
+          {
+            <div class="user-orders-col">
+              <h3 class="user-orders-subtitle">Shipping Address</h3>
+              <p class="user-orders-text">@order.Address.FirstName @order.Address.LastName</p>
+              <p class="user-orders-text">@order.Address.HomeNumber</p>
+              <p class="user-orders-text">@order.Address.Street</p>
+              <p class="user-orders-text">@order.Address.City</p>
+              <p class="user-orders-text">@order.Address.State</p>
+              <p class="user-orders-text">@order.Address.PhoneNumber</p>
+            </div>
+          }
+          <div class="user-orders-col">
+            @if(order.Status == "PENDING_DETAILS")
+            {
+              <a href='@Url.Action("checkout", "order", new { id = order.Id.ToString() })' class="navigation-navLink" style="width: 100%;">
+                <button class="user-orders-button">
+                  Checkout
+                </button>
+              </a>
+            }
+            @if(order.Status == "PENDING_PAYMENT")
+            {
+              <a href='@Url.Action("pay", "order", new { id = order.Id.ToString() })' class="navigation-navLink" style="width: 100%;">
+                <button class="user-orders-button">
+                  Pay
+                </button>
+              </a>
+            }
+          </div>
+        </div>
+
+        <div class="user-orders-footer">
+          <h3 class="user-orders-subtitle">
+            Total Price: @order.TotalPrice EGP
+          </h3>
+          <h3 class="user-orders-subtitle">
+            Expected Delivery Date: @DateTime.Now
+            @* {new Date(expectedDeliveryDate).toLocaleDateString("en-US", {
+              weekday: "short",
+              day: "2-digit",
+              month: "short",
+            })} *@
+          </h3>
+        </div>
+      </div>
+    }
+  </div>
+</div>

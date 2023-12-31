@@ -25,14 +25,12 @@ public class SignUpCommandHandler : ICommandHandler<SignUpCommand, User>
             throw new Exception("User with Email already Exists");
         }
 
-        var user = new User()
-        {
-            FirstName = command.FirstName,
-            LastName = command.LastName,
-            Email = command.Email,
-            Password = command.Password,
-            PhoneNumber = command.PhoneNumber,
-        };
+        var user = User.Create(
+            command.FirstName,
+            command.LastName,
+            command.PhoneNumber,
+            command.Email,
+            command.Password);
 
         await _userRepository.Create(user);
 

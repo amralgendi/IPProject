@@ -9,75 +9,81 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Pictionary.Mvc
 build_property.RootNamespace = Pictionary.Mvc
-build_property.ProjectDir = C:\Users\Amr\OneDrive - Faculty of Engineering Ain Shams University\Projects - Programming\IP Team\amr project\IPProject\Pictionary.Mvc\
-build_property.EnableComHosting = 
-build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.ProjectDir = C:\Users\amrag\Desktop\pictionary-mvc\Pictionary.Mvc\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Amr\OneDrive - Faculty of Engineering Ain Shams University\Projects - Programming\IP Team\amr project\IPProject\Pictionary.Mvc
+build_property.MSBuildProjectDirectory = C:\Users\amrag\Desktop\pictionary-mvc\Pictionary.Mvc
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Amr/OneDrive - Faculty of Engineering Ain Shams University/Projects - Programming/IP Team/amr project/IPProject/Pictionary.Mvc/Views/Auth/LogIn.cshtml]
+[C:/Users/amrag/Desktop/pictionary-mvc/Pictionary.Mvc/Views/Admin/Orders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cT3JkZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amrag/Desktop/pictionary-mvc/Pictionary.Mvc/Views/Auth/AuthUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxBdXRoVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amrag/Desktop/pictionary-mvc/Pictionary.Mvc/Views/Auth/LogIn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dJbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Amr/OneDrive - Faculty of Engineering Ain Shams University/Projects - Programming/IP Team/amr project/IPProject/Pictionary.Mvc/Views/Auth/SignUp.cshtml]
+[C:/Users/amrag/Desktop/pictionary-mvc/Pictionary.Mvc/Views/Auth/SignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxTaWduVXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Amr/OneDrive - Faculty of Engineering Ain Shams University/Projects - Programming/IP Team/amr project/IPProject/Pictionary.Mvc/Views/CheckoutPage/CheckoutPage.cshtml]
+[C:/Users/amrag/Desktop/pictionary-mvc/Pictionary.Mvc/Views/CheckoutPage/CheckoutPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRQYWdlXENoZWNrb3V0UGFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Amr/OneDrive - Faculty of Engineering Ain Shams University/Projects - Programming/IP Team/amr project/IPProject/Pictionary.Mvc/Views/Home/Index.cshtml]
+[C:/Users/amrag/Desktop/pictionary-mvc/Pictionary.Mvc/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Amr/OneDrive - Faculty of Engineering Ain Shams University/Projects - Programming/IP Team/amr project/IPProject/Pictionary.Mvc/Views/LoginPage/index.cshtml]
+[C:/Users/amrag/Desktop/pictionary-mvc/Pictionary.Mvc/Views/LoginPage/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5QYWdlXGluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Amr/OneDrive - Faculty of Engineering Ain Shams University/Projects - Programming/IP Team/amr project/IPProject/Pictionary.Mvc/Views/MyOrders/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlPcmRlcnNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Amr/OneDrive - Faculty of Engineering Ain Shams University/Projects - Programming/IP Team/amr project/IPProject/Pictionary.Mvc/Views/Order/Checkout.cshtml]
+[C:/Users/amrag/Desktop/pictionary-mvc/Pictionary.Mvc/Views/Order/Checkout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ2hlY2tvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Amr/OneDrive - Faculty of Engineering Ain Shams University/Projects - Programming/IP Team/amr project/IPProject/Pictionary.Mvc/Views/Order/Index.cshtml]
+[C:/Users/amrag/Desktop/pictionary-mvc/Pictionary.Mvc/Views/Order/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Amr/OneDrive - Faculty of Engineering Ain Shams University/Projects - Programming/IP Team/amr project/IPProject/Pictionary.Mvc/Views/Order/MyOrders.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcTXlPcmRlcnMuY3NodG1s
+[C:/Users/amrag/Desktop/pictionary-mvc/Pictionary.Mvc/Views/Order/MyOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcTXlPcmRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Amr/OneDrive - Faculty of Engineering Ain Shams University/Projects - Programming/IP Team/amr project/IPProject/Pictionary.Mvc/Views/Order/OrderImagesPage.cshtml]
+[C:/Users/amrag/Desktop/pictionary-mvc/Pictionary.Mvc/Views/Order/OrderImagesPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcT3JkZXJJbWFnZXNQYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Amr/OneDrive - Faculty of Engineering Ain Shams University/Projects - Programming/IP Team/amr project/IPProject/Pictionary.Mvc/Views/Shared/Error.cshtml]
+[C:/Users/amrag/Desktop/pictionary-mvc/Pictionary.Mvc/Views/Profile/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amrag/Desktop/pictionary-mvc/Pictionary.Mvc/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Amr/OneDrive - Faculty of Engineering Ain Shams University/Projects - Programming/IP Team/amr project/IPProject/Pictionary.Mvc/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/amrag/Desktop/pictionary-mvc/Pictionary.Mvc/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Amr/OneDrive - Faculty of Engineering Ain Shams University/Projects - Programming/IP Team/amr project/IPProject/Pictionary.Mvc/Views/SignupPage/index.cshtml]
+[C:/Users/amrag/Desktop/pictionary-mvc/Pictionary.Mvc/Views/SignupPage/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2lnbnVwUGFnZVxpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Amr/OneDrive - Faculty of Engineering Ain Shams University/Projects - Programming/IP Team/amr project/IPProject/Pictionary.Mvc/Views/_ViewImports.cshtml]
+[C:/Users/amrag/Desktop/pictionary-mvc/Pictionary.Mvc/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Amr/OneDrive - Faculty of Engineering Ain Shams University/Projects - Programming/IP Team/amr project/IPProject/Pictionary.Mvc/Views/_ViewStart.cshtml]
+[C:/Users/amrag/Desktop/pictionary-mvc/Pictionary.Mvc/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Amr/OneDrive - Faculty of Engineering Ain Shams University/Projects - Programming/IP Team/amr project/IPProject/Pictionary.Mvc/Views/Shared/_Layout.cshtml]
+[C:/Users/amrag/Desktop/pictionary-mvc/Pictionary.Mvc/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-a8kkxjk552

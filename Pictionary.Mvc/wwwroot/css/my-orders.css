@@ -1,0 +1,184 @@
+.my-orders-container {
+  padding: 50px;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.my-orders-title {
+  font-size: 2.35rem;
+  font-weight: 700;
+  align-self: flex-start;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  border-bottom: 3px solid #9ea8db;
+  font-family: "Outfit";
+  text-align: center;
+  margin-bottom: 10px;
+  color: #1d1d1f;
+}
+
+.my-orders-ordersContainer {
+  width: 100%;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .my-orders-title {
+    font-size: 1.8rem;
+  }
+  .my-orders-container {
+    padding-inline: 20px;
+    justify-content: center;
+    align-items: center;
+    /* box-sizing: border-box; */
+  }
+}
+
+.user-orders-container {
+  width: 80%;
+  min-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #d5e7f3;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px 0px #d5e7f39c;
+  gap: 20px;
+}
+
+.user-orders-title {
+  font-size: 1rem;
+  font-weight: 700;
+  align-self: flex-start;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  border-bottom: 3px solid #9ea8db;
+  font-family: "Outfit";
+  text-align: center;
+  display: inline;
+  color: #1d1d1f;
+}
+
+.user-orders-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.user-orders-status {
+  font-family: "Outfit";
+  font-size: 1.4rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+.user-orders-subtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  align-self: flex-start;
+  text-transform: uppercase;
+  letter-spacing: 0.01rem;
+  /* border-bottom: 3px solid #9ea8db; */
+  font-family: "Outfit";
+  text-align: center;
+  display: inline;
+  color: #1d1d1f;
+}
+
+.user-orders-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.user-orders-body {
+  display: flex;
+  width: 100%;
+}
+
+.user-orders-col {
+  flex: 1;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.user-orders-col:last-child {
+  max-width: 20%;
+  gap: 10px;
+}
+
+.user-orders-button {
+  background-color: #1d1d1f;
+  color: #d5e7f3;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: "Outfit";
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.user-orders-button:hover {
+  background-color: #9ea8db;
+  color: #1d1d1f;
+}
+
+.user-orders-button:active {
+  transform: scale(0.95);
+}
+.user-orders-text {
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .user-orders-title {
+    font-size: 0.9rem;
+  }
+  .user-orders-subtitle {
+    font-size: 1rem;
+  }
+  .user-orders-body {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .user-orders-col {
+    width: 100%;
+  }
+  .user-orders-col:last-child {
+    max-width: 100%;
+  }
+  .user-orders-header {
+    flex-direction: column;
+  }
+  .user-orders-col:first-child {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .col:nth-child(user-orders-2) {
+    justify-content: center;
+    align-items: center;
+  }
+  .user-orders-header {
+    gap: 10px;
+  }
+}

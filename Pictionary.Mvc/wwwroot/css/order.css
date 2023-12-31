@@ -75,3 +75,287 @@
     gap: 20px;
   }
 }
+
+.image-upload-input {
+  display: none;
+}
+
+.frame-selection-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 120px;
+}
+.frame-selection-uploadedImagesContainer {
+  display: flex;
+  /* flex-direction: column */
+  flex-wrap: wrap;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  gap: 45px;
+}
+.frame-selection-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  /* align-self: flex-start; */
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  border-bottom: 3px solid #9ea8db;
+  font-family: "Outfit";
+  margin-bottom: 10px;
+}
+.frame-selection-subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  /* align-self: flex-start; */
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-family: "Outfit";
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .frame-selection-container {
+    padding-inline: 2rem;
+    padding-bottom: 2rem;
+
+    gap: 2rem;
+  }
+  .frame-selection-title {
+    font-size: 1.35rem;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.order-card-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 27px;
+  /* border: 3px solid #ccc; */
+  border-radius: 12px;
+  padding-inline: 22px;
+  padding-block: 18px;
+  background-color: #e8eaf6ce;
+  box-shadow: 0px 0px 10px 1px rgba(158, 168, 219, 0.409);
+  animation: fadeIn 0.3s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+
+.card:order-card-hover {
+  box-shadow: 0px 0px 10px 1px rgba(158, 168, 219, 0.659);
+}
+.order-card-image {
+  width: 120px;
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.order-card-radioContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  flex-direction: column;
+}
+.order-card-quantityContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.order-card-quantityInput {
+  width: 50px;
+  height: 27px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.order-card-frameSizeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.order-card-cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.order-card-closeIconContainer {
+  padding-top: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.order-card-closeIcon {
+  color: #9ea8db;
+  transition: all 0.15s ease-in-out;
+}
+
+.closeIcon:hover {
+  color: #e63946;
+}
+
+@media screen and (max-width: 768px) {
+  .order-card-card {
+    gap: 10px;
+    padding-inline: 10px;
+    padding-block: 10px;
+  }
+  .order-card-image {
+    width: 80px;
+    height: 90px;
+  }
+  .order-card-cardHeader {
+    gap: 10px;
+  }
+  .order-card-closeIconContainer {
+    padding-top: 0;
+  }
+  .order-card-closeIcon {
+    font-size: 20px;
+  }
+  .order-card-radioContainer {
+    gap: 5px;
+  }
+  .order-card-quantityContainer {
+    gap: 5px;
+  }
+  .order-card-quantityInput {
+    width: 40px;
+    height: 20px;
+    font-size: 14px;
+  }
+  .order-card-frameSizeContainer {
+    gap: 10px;
+  }
+  .order-card-br {
+    display: none;
+  }
+  .order-card-text {
+    font-size: 14px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.bottom-tab-container {
+  height: 75px;
+  background-color: #d5e7f3;
+  position: fixed;
+  bottom: 22px;
+  width: 89%;
+  box-shadow: 0px 0px 10px 1px #d5e7f3c5;
+  border-radius: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  animation: slideInFromBottom 0.5s ease-in-out;
+}
+
+.bottom-tab-tab {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-tab-checkoutButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background-color: transparent;
+  border: none;
+  color: var(--black);
+  transition: all 0.125s ease-in-out;
+}
+
+.checkoutButton:hover {
+  color: var(--purple);
+}
+.bottom-tab-checkoutButtonText {
+  font-size: 25px;
+  font-weight: 600;
+  align-self: flex-start;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  border-bottom: 3px solid #9ea8db;
+  font-family: "Outfit";
+  flex: 1;
+}
+
+.bottom-tab-text {
+  color: var(--black);
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 70px;
+}
+
+.bottom-tab-price {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 70px;
+}
+.bottom-tab-disbaled {
+  color: red !important;
+}
+
+@media screen and (max-width: 768px) {
+  .bottom-tab-container {
+    width: 100%;
+    bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    height: 65px;
+  }
+  .bottom-tab-text {
+    display: none;
+  }
+  .bottom-tab-tab {
+    gap: 0;
+  }
+  .bottom-tab-checkoutButtonText {
+    font-size: 20px;
+  }
+  .bottom-tab-numOfPhotos {
+    display: block;
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

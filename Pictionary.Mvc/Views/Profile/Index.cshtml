@@ -1,0 +1,51 @@
+@model (Pictionary.Domain.UserModel.User User, List<Pictionary.Domain.AddressModel.Address> Addresses)
+@{
+    ViewData["Title"] = "Profile Page";
+}
+
+@section styles {
+    <link rel="stylesheet" href="~/css/input.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/log-in.css" asp-append-version="true" />
+}
+
+<div class="log-in-container">
+  <div class="log-in-form-container">
+    <p>Name: @(Model.User.FirstName + ' ' + Model.User.LastName)</p>
+    <p>Email: @Model.User.Email</p>
+    <p>Role: @Model.User.Role</p>
+    <p>Phone Number: @Model.User.PhoneNumber</p>
+  </div>
+    @if(Model.Addresses.Any())
+    {
+  <div class="log-in-form-container">
+        <ul>
+            <p>Addresses:</p>
+           <div style="display: grid">
+             @foreach (var address in Model.Addresses)
+            {
+                <div>
+                <li>
+                    <ul>
+                        <address>
+                            <li><h3>@address.Name</h3></li>
+                            <li>@address.FirstName + @address.LastName</li>
+                            <li>@address.PhoneNumber</li>
+                            <li>@address.HomeNumber</li>
+                            <li>@address.Street</li>
+                            <li>@address.City</li>
+                            <li>@address.State</li>
+                        </address>
+                    </ul>
+                </li>
+                </div>
+                @Html.BeginForm("address", "profile", new { id = address.Id.Value.ToString() }, FormMethod.Post)
+                {
+                    <button type="submit">Delete</button>
+                }
+            }
+           </div>
+        </ul>
+  </div>
+    }
+
+</div>

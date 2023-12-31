@@ -1,93 +1,173 @@
+@model CheckoutViewModel;
+
 @{
     ViewData["Title"] = "Checkout Page";
 }
 
-<div
-      className={classes.container}
-      style={{ backgroundImage: `url(${background})` }}
-    >
-      <div className={classes.container}>
-      <h1 className={classes.title}>Shipping Details</h1>
-      <p className={classes.subtitle}>
-        Please enter your shipping details below
-      </p>
-      <AddressForm
-        errors={errors}
-        handleInputChange={handleInputChange}
-        formData={formData}
-      />
+@section styles {
+    <link rel="stylesheet" href="~/css/input.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/checkout.css" asp-append-version="true" />
+}
+
+<div>
+  @using (Html.BeginForm("checkout", "order", FormMethod.Post, new { @class = "checkout-container" }))
+  {
+  <div class="shipping-details-container">
+    <h1 class="shipping-details-title">Shipping Details</h1>
+    <div class="address-form-formGroup address-form-pick-address @(!Model.Addresses.Any() ? "hidden" : string.Empty)">
+      @Html.LabelFor(m => m.AddressRequest.IsExistingAddress, "Address Options", new { @class = "input-label" })
+      @Html.DropDownListFor(
+        m => m.AddressRequest.IsExistingAddress,
+        new List<SelectListItem>() { 
+          new() 
+          { 
+            Selected = Model.AddressRequest.IsExistingAddress,
+            Text = "Get Existing Address",
+            Value = "true"
+          },
+          new() 
+          { 
+            Selected = !Model.AddressRequest.IsExistingAddress,
+            Text = "Create New Address",
+            Value = "false"
+          },
+        }, 
+        new { @class = "quantity-form-input isExistingSelector"})
     </div>
-      <div className={classes.container}>
-      <div className={classes.orderSummaryContainer}>
-        <div className={classes.orderSummaryHeader}>
-          <h1 className={classes.orderSummaryHeaderTitle}>Order Summary</h1>
+    <p class="shipping-details-subtitle create-new">
+      Please enter your shipping details below
+    </p>
+    <div class="address-form-container create-new">
+      <div class="input-container">
+        @Html.LabelFor(m => m.AddressRequest.AddressName, "Addres Name", new { @class = "input-label"})
+        @Html.TextBoxFor(m => m.AddressRequest.AddressName, new { @class = "input-input", placeholder = "Name your new Address"})
+      </div>
+      <div class="address-form-nameContainer">
+        <div class="address-form-nameInput input-container" >
+          @Html.LabelFor(m => m.AddressRequest.FirstName, "First Name", new { @class = "input-label"})
+          @Html.TextBoxFor(m => m.AddressRequest.FirstName, new { @class = "input-input", placeholder = "Jane"})
         </div>
-        <div className={classes.orderSummaryBody}>
-          <div className={classes.subHeader}>
-            <h3 className={classes.subHeaderTitle}>Mini Pictures</h3>
-            <p className={classes.subHeaderPrice}>
-              {numOfMini} x {35} EGP
-            </p>
-          </div>
-          <div className={classes.subHeader}>
-            <h3 className={classes.subHeaderTitle}>Wide Pictures</h3>
-            <p className={classes.subHeaderPrice}>
-              {numOfWide} x {40} EGP
-            </p>
-          </div>
-          <div className={classes.subHeader}>
-            <h3 className={classes.subHeaderTitle}>Total Pictures</h3>
-            <p className={classes.subHeaderPrice}>{totalNumOfFrames}</p>
-          </div>
-        </div>
-
-        <div className={classes.orderSummaryBody}>
-          <div className={classes.subHeader}>
-            <h3 className={classes.subHeaderTitle}>Subtotal</h3>
-            <p className={classes.subHeaderPrice}>{totalPrice} EGP</p>
-          </div>
-          <div className={classes.subHeader}>
-            <h3 className={classes.subHeaderTitle}>Shipping</h3>
-            <p className={classes.subHeaderPrice}>{shippingPrice} EGP</p>
-          </div>
-
-          <div className={classes.subHeader}>
-            <h3 className={classes.subHeaderTitle}>Total</h3>
-            <p className={classes.subHeaderPrice}>
-              {totalPrice + shippingPrice} EGP
-            </p>
-          </div>
+        <div class="input-container address-form-nameInput" >
+          @Html.LabelFor(m => m.AddressRequest.LastName, "Last Name", new { @class = "input-label"})
+          @Html.TextBoxFor(m => m.AddressRequest.LastName, new { @class = "input-input", placeholder = "Doe"})
         </div>
       </div>
-      <div className={classes.checkoutButtonContainer}>
-        <button
-      type={type}
-      onClick={onClick}
-      className={`${classes.container} ${className}`}
-    >
-      {!loading ? (
-        <span className={classes.text}>{children ? children : text}</span>
-      ) : (
-        <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        flex: 1,
-      }}
-    >
-      <img
-        src={spinner}
-        alt="Loading..."
-        style={{ width: size, height: size, margin: 0, padding: 0 }}
-      />
-    </div>
-      )}
-    </button>
+      <div class="input-container">
+        @Html.LabelFor(m => m.AddressRequest.PhoneNumber, "Phone Number", new { @class = "input-label"})
+        @Html.TextBoxFor(m => m.AddressRequest.PhoneNumber, new { @class = "input-input", placeholder = "0123456789"})
+      </div>
+      <div class="input-container" >
+        @Html.LabelFor(m => m.AddressRequest.Street, "Street", new { @class = "input-label"})
+        @Html.TextBoxFor(m => m.AddressRequest.Street, new { @class = "input-input", placeholder = "Street"})
+      </div>
+      <div class="input-container" >
+        @Html.LabelFor(m => m.AddressRequest.HomeNumber, "Home Number", new { @class = "input-label"})
+        @Html.TextBoxFor(m => m.AddressRequest.HomeNumber, new { @class = "input-input", placeholder = "Home Number"})
+      </div>
+      <div class="address-form-nameContainer">
+        <div class="address-form-nameInput address-form-formGroup">
+          @Html.LabelFor(m => m.AddressRequest.State, "State", new { @class = "input-label"})
+          @Html.DropDownListFor(
+            m => m.AddressRequest.State,
+            new List<SelectListItem>() { 
+              new() 
+              { 
+                Selected = Model.AddressRequest.State == "Cairo" || Model.AddressRequest.State == string.Empty,
+                Text = "Cairo",
+                Value = "Cairo"
+              },
+              new() 
+              { 
+                Selected = Model.AddressRequest.State == "Alexandria",
+                Text = "Alexandria",
+                Value = "Alexandria"
+              },
+            }, 
+            new { @class = "quantity-form-input" })
+        </div>
+        <div class="input-container address-form-nameInput">
+          @Html.LabelFor(m => m.AddressRequest.City, "City", new { @class = "input-label"})
+          @Html.TextBoxFor(m => m.AddressRequest.City, new { @class = "input-input", placeholder = "City"})
+        </div>
       </div>
     </div>
+    <div class="address-form-container existing">
+      <div class="address-form-nameInput address-form-formGroup" style="width: 100%;">
+        @Html.LabelFor(m => m.AddressRequest.AddressId, "Pick an Address", new { @class = "input-label"})
+        @Html.DropDownListFor(
+          m => m.AddressRequest.AddressId,
+          @Model.Addresses.Select(a => new SelectListItem() { Selected = Model.AddressRequest.AddressId == a.Id.Value.ToString(), Text = $"{a.Name}, {a.FirstName} {a.LastName}\n{a.HomeNumber} {a.Street}, {a.City}, {a.State}, {a.PhoneNumber}", Value = a.Id.Value.ToString()}),
+          new { @class = "quantity-form-input" })
+      </div>
     </div>
+  </div>
+  <div class="order-summary-container">
+    <div class="order-summary-orderSummaryContainer">
+      <div class="order-summary-orderSummaryHeader">
+        <h1 class="order-summary-orderSummaryHeaderTitle">Order Summary</h1>
+      </div>
+      <div class="order-summary-orderSummaryBody">
+        <div class="order-summary-subHeader">
+          <h3 class="order-summary-subHeaderTitle">Id</h3>
+          <p class="order-summary-subHeaderPrice">
+            Type
+          </p>
+          <p class="order-summary-subHeaderPrice">
+            Quantity
+          </p>
+        </div>
+        @for (var i = 0; i < Model.Order.Polaroids.Count; i++)
+        {
+          <div class="order-summary-subHeader">
+            <h3 class="order-summary-subHeaderTitle">@Model.Order.Polaroids[i].Id.Value.ToString()[..13]</h3>
+            <p class="order-summary-subHeaderPrice">
+              @Model.Order.Polaroids[i].Type.Value
+            </p>
+            <p class="order-summary-subHeaderPrice">
+              @Model.Order.Polaroids[i].Quantity
+            </p>
+          </div>
+        }
+      </div>
 
-    <div>
-      <p>Error: {message}</p>
+      <div class="order-summary-orderSummaryBody">
+        <div class="order-summary-subHeader">
+          <h3 class="order-summary-subHeaderTitle">Total</h3>
+          <p class="order-summary-subHeaderPrice">
+            @Model.Order.TotalPrice EGP
+          </p>
+        </div>
+      </div>
     </div>
+    <div class="order-summary-checkoutButtonContainer">
+      <button type="submit" class="stretched-button-container">
+          <span class="stretched-button-text">Place Order</span>
+      </button>
+    </div>
+  </div>
+  }
+</div>
+
+<script>
+  console.log(AddressRequest_AddressId)
+  var createNewElements = document.querySelectorAll(".create-new");
+
+  var existngElements = document.querySelectorAll(".existing")
+
+  var isExistingSelect = document.querySelector('.isExistingSelector')
+
+  console.log(createNewElements)
+  console.log(existngElements)
+
+  const setSelector = () => {
+    const isExisting = isExistingSelect.value == "true";
+
+    createNewElements.forEach(el => isExisting ? el.classList.add("hidden") : el.classList.remove("hidden"))
+    existngElements.forEach(el => isExisting ? el.classList.remove("hidden") : el.classList.add("hidden"))
+  }
+
+  isExistingSelect.addEventListener("change", setSelector)
+
+  setSelector()
+
+</script>
