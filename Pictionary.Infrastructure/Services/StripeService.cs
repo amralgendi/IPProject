@@ -13,7 +13,7 @@ public class StripeService : IPaymentService
 {
     private const string SECRET = "sk_test_51LaVGBFqgpEkAcuY3QHHF576YMLDV4NMRPC1YPtm5CwxL7w4q47ULl0iJHa3TGkQzmAwfqYmkWHEUzeSdt0qthlb00KTLAiKNo";
 
-    private const string MINI_PRICE_ID = "price_1OTGBEFqgpEkAcuYlWPYcxk4";
+    private const string MINI_PRICE_ID = "price_1OTMEzFqgpEkAcuY7qFOC2lz";
 
     private const string WIDE_PRICE_ID = "price_1OTGBlFqgpEkAcuYmqdoFHxH";
 

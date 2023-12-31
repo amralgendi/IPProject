@@ -104,7 +104,7 @@
                     <li class="navigation-navItem">
                         @Html.ActionLink(
                             !User.Identity.IsAuthenticated ? "Sign up" : "My Orders",
-                            !User.Identity.IsAuthenticated ? "signup" : "my-orders",
+                            !User.Identity.IsAuthenticated ? "signup" : "myorder",
                             !User.Identity.IsAuthenticated ? "auth" : "order",
                             new {},
                             new

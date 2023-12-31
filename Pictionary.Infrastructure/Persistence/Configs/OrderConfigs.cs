@@ -24,6 +24,10 @@ public class OrderConfigs : IEntityTypeConfiguration<Order>
                 id => id.Value,
                 value => OrderId.Parse(value));
 
+        builder.Property(m => m.CreatedAt);
+
+        builder.Property(m => m.ExpectedDeliveryAt);
+
         builder.OwnsMany(m => m.Polaroids, ib =>
         {
             ib.ToTable("Polaroids");

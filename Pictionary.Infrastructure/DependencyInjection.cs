@@ -19,6 +19,7 @@ public static class DependencyInjection
         services.AddScoped<IAddressRepository, AddressRepository>();
 
         services.AddScoped<IPaymentService, StripeService>();
+        services.AddScoped<IReceiptGenerator, ReceiptGenerator>();
 
         services.AddDbContext<PictionaryDbContext>(
             options => options.UseSqlServer("Server=localhost;Database=Pictionary;TrustServerCertificate=Yes;User Id=sa;Password=Pictionary@Secret@password2023"));

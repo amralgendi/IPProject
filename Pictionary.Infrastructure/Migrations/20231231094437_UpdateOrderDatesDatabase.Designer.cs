@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Pictionary.Infrastructure.Persistence;
 
@@ -11,9 +12,11 @@ using Pictionary.Infrastructure.Persistence;
 namespace Pictionary.Infrastructure.Migrations
 {
     [DbContext(typeof(PictionaryDbContext))]
-    partial class PictionaryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231231094437_UpdateOrderDatesDatabase")]
+    partial class UpdateOrderDatesDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

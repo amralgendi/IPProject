@@ -15,4 +15,10 @@ public static class Utils
         return context.User.FindFirstValue(ClaimTypes.Sid)
             ?? throw new Exception("Context not Found");
     }
+
+    public static string GetRole(this HttpContext context)
+    {
+        return context.User.FindFirstValue(ClaimTypes.Role)
+            ?? throw new Exception("Context not Found");
+    }
 }

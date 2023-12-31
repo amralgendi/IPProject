@@ -12,6 +12,7 @@ using Pictionary.Application.Orders.Commands.AddOrderDetails;
 using Pictionary.Application.Orders.Commands.CreateOrder;
 using Pictionary.Application.Orders.Commands.OrderPaid;
 using Pictionary.Application.Orders.Commands.UploadUserImages;
+using Pictionary.Application.Orders.Queries.GenerateReceipt;
 using Pictionary.Application.Orders.Queries.GetOrder;
 using Pictionary.Application.Orders.Queries.GetOrderPaymentLink;
 using Pictionary.Application.Orders.Queries.GetOrders;
@@ -118,6 +119,19 @@ public class OrderController : Controller
         Console.WriteLine(addresses.Count());
 
         return View(new CheckoutViewModel(order, addresses));
+    }
+
+    [Authorize]
+    public async Task<IActionResult> GenerateReceipt(string id)
+    {
+        var userId = HttpContext.GetId();
+        var userRole = HttpContext.GetRole();
+
+        var req = new GenerateReceiptQuery(userId, id, userRole);
+
+        var pdf = await _mediator.Send(req);
+
+        return File(Convert.FromBase64String(pdf), "application/pdf");
     }
 
     [Authorize]

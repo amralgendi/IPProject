@@ -11,7 +11,7 @@ public interface IOrderRepository
 
     Task<IEnumerable<Order>> GetAllByUserId(UserId userId);
 
-    Task<IEnumerable<Order>> GetAll(int size = 10, int skip = 0);
+    Task<IEnumerable<Order>> GetAll(int size = 10, int page = 0);
 
     Task Create(Order Order);
 

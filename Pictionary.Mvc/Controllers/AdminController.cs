@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Pictionary.Application.Addresses.Queries.GetAddresses;
 using Pictionary.Application.Auth.Queries.GetUser;
 using Pictionary.Application.Orders.Commands.AddOrderDetails;
+using Pictionary.Application.Orders.Commands.AdminSetOrderStatus;
 using Pictionary.Application.Orders.Commands.CreateOrder;
 using Pictionary.Application.Orders.Commands.OrderPaid;
 using Pictionary.Application.Orders.Commands.UploadUserImages;
@@ -37,14 +38,31 @@ public class AdminController : Controller
     }
 
     [Authorize(Roles = "Admin")]
-    public async Task<IActionResult> Orders()
+    public async Task<IActionResult> Orders(int page = 1)
     {
-        var req = new AdminGetOrdersQuery();
+        Console.WriteLine("Page: " + page);
+        var req = new AdminGetOrdersQuery(Page: page);
 
         var orders = await _mediator.Send(req);
-        return View(orders.ToList());
+
+        if(!orders.Any())
+        {
+            return RedirectToAction("orders", 1);
+        }
+        Console.WriteLine(orders.Count());
+        return View(new AdminOrdersViewModel(orders.ToList(), page));
     }
 
+    [Authorize(Roles = "Admin")]
+    [HttpPost]
+    public async Task<IActionResult> Orders(string id, string status)
+    {
+        var req = new AdminSetOrderStatusCommand(id, status);
+
+        var _ = await _mediator.Send(req);
+
+        return RedirectToAction("orders");
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

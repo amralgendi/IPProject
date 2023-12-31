@@ -1,4 +1,4 @@
-@model List<Pictionary.Domain.OrderModel.Order>
+@model AdminOrdersViewModel
 @{
     ViewData["Title"] = "Admin | All Orders Page";
 }
@@ -26,30 +26,103 @@
         </div>
         <div class="admin-orders-pagination">
           <span>
-            Page {currentPage} of {totalPages || 1}
+            Page @Model.Page
           </span>
-          <button
-            class="admin-orders-button"
-            onClick={() => handlePageChange(currentPage - 1)}
-            disabled={currentPage === 1}
-          >
-            Previous
+          <button class="admin-orders-button" disabled = "@Model.Page == 1">
+            <a href='@Url.Action("orders", "admin", new { page = (Model.Page - 1) == 0 ? 1 : Model.Page - 1 })'>Previous</a>
           </button>
-          <button
-            onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
-            class="admin-orders-button"
-          >
-            Next
+
+          <button class="admin-orders-button">
+            <a href='@Url.Action("orders", "admin", new { page = Model.Page + 1 })'>Next</a>
           </button>
         </div>
       </div>
 
       <div class="admin-orders-ordersContainer">
-        {orders.map((order) => (
-          <div key={order._id} class="admin-orders-orderItem">
-            <UserOrder fetchOrders={fetchOrders} {...order} />
+        @foreach (var order in Model.Orders)
+        {
+          <div class="user-orders-container">
+            <div class="user-orders-header">
+              <h2 class="user-orders-title">Order# @order.Id.Value</h2>
+              <h3 class="user-orders-status">@order.Status.Value</h3>
+            </div>
+            <div class="user-orders-body">
+              <div class="user-orders-col">
+                <p class="user-orders-text">Total Quantity: @order.Polaroids.Sum(p => p.Quantity)</p>
+                <p class="user-orders-text">Wide Polaroids:  @order.Polaroids.Sum(p => p.Type.Value == "WIDE" ? p.Quantity : 0)</p>
+                <p class="user-orders-text">Mini Polaroids: @order.Polaroids.Sum(p => p.Type.Value == "MINI" ? p.Quantity : 0)</p>
+              </div>
+              @if(order.Address is not null)
+              {
+                <div class="user-orders-col">
+                  <h3 class="user-orders-subtitle">Shipping Address</h3>
+                  <p class="user-orders-text">@order.Address.FirstName @order.Address.LastName</p>
+                  <p class="user-orders-text">@order.Address.HomeNumber</p>
+                  <p class="user-orders-text">@order.Address.Street</p>
+                  <p class="user-orders-text">@order.Address.City</p>
+                  <p class="user-orders-text">@order.Address.State</p>
+                  <p class="user-orders-text">@order.Address.PhoneNumber</p>
+                </div>
+              }
+              <div class="user-orders-col">
+                <a href='@Url.Action("generatereceipt", "order", new { id = order.Id.Value.ToString() })' class="navigation-navLink" style="width: 100%;">
+                  <button class="user-orders-button">
+                    Print
+                  </button>
+                </a>
+                @if(order.Status.Value != "PENDING_DETAILS"  && order.Status.Value != "PENDING_PAYMENT")
+                {
+                  @* <a href='@Url.Action("orders", "admin", new { id = order.Id.Value.ToString() })' class="navigation-navLink" style="width: 100%;">
+                    <button class="user-orders-button">
+                      Checkout
+                    </button>
+                  </a> *@
+                  @if(order.Status.Value == "INITIATED")
+                  {
+                    @using(Html.BeginForm("orders", "admin", new { id = order.Id.Value.ToString(), status = "DELIVERING" }, FormMethod.Post))
+                    {
+                      <button class="user-orders-button">
+                        Set Delivering
+                      </button>
+                    }
+                  }
+                  @if(order.Status.Value == "INITIATED" || order.Status.Value == "DELIVERING")
+                  {
+                    @using(Html.BeginForm("orders", "admin", new { id = order.Id.Value.ToString(), status = "DELIVERED" }, FormMethod.Post))
+                    {
+                      <button class="user-orders-button">
+                        Set Delivered
+                      </button>
+                    }
+                  }
+                  @* <a href='@Url.Action("orders", "admin", new { id = order.Id.Value.ToString(), status = "DELIVERING" })' class="navigation-navLink" style="width: 100%;">
+                    <button class="user-orders-button">
+                      Set Delivering
+                    </button>
+                  </a>
+                  <a href='@Url.Action("orders", "admin", new { id = order.Id.Value.ToString(), status = "DELIVERED" })' class="navigation-navLink" style="width: 100%;">
+                    <button class="user-orders-button">
+                      Set Delivered
+                    </button>
+                  </a> *@
+                }
+              </div>
+            </div>
+
+            <div class="user-orders-footer">
+              <h3 class="user-orders-subtitle">
+                Total Price: @order.TotalPrice EGP
+              </h3>
+              <h3 class="user-orders-subtitle">
+                Expected Delivery Date: @DateTime.Now
+                @* {new Date(expectedDeliveryDate).toLocaleDateString("en-US", {
+                  weekday: "short",
+                  day: "2-digit",
+                  month: "short",
+                })} *@
+              </h3>
+            </div>
           </div>
-        ))}
+        }
       </div>
     </div>

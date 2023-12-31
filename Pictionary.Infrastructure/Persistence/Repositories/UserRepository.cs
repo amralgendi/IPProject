@@ -12,11 +12,6 @@ public class UserRepository : IUserRepository
     public UserRepository(PictionaryDbContext dbContext)
     {
         _dbContext = dbContext;
-        Console.WriteLine("Inide User Repository");
-        var user = User.CreateAdmin("Salah", "Hamada", "01122334456", "me@mohasalah.com", "checkcheck");
-        _dbContext.Add(user);
-
-        _dbContext.SaveChanges();
     }
 
     public async Task Create(User user)

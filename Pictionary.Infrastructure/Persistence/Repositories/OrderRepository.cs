@@ -24,9 +24,9 @@ public class OrderRepository : IOrderRepository
         await _dbContext.SaveChangesAsync();
     }
 
-    public async Task<IEnumerable<Order>> GetAll(int size = 10, int skip = 0)
+    public async Task<IEnumerable<Order>> GetAll(int size, int page = 1)
     {
-        return await _dbContext.Orders.Skip(skip).Take(size).ToListAsync();
+        return await _dbContext.Orders.Skip((page - 1) * size).Take(size).ToListAsync();
     }
 
     public async Task<IEnumerable<Order>> GetAllByUserId(UserId userId)
@@ -42,27 +42,5 @@ public class OrderRepository : IOrderRepository
     public async Task Update(Order order)
     {
         await _dbContext.SaveChangesAsync();
-    }
-
-    private static OrderDto ToOrderDto(Order o)
-    {
-        var address = o.Address is null
-            ? null
-            : new AddressDto(
-                o.Address.FirstName,
-                o.Address.LastName,
-                o.Address.PhoneNumber,
-                o.Address.Street,
-                o.Address.HomeNumber,
-                o.Address.City,
-                o.Address.State);
-
-        return new OrderDto(
-            o.Id.Value.ToString(),
-            o.TotalPrice,
-            o.UserId.Value.ToString(),
-            o.Status.Value,
-            address,
-            o.Polaroids.Select(p => new PolaroidDto(p.Id.Value.ToString(), p.Quantity, p.Price)));
     }
 }

@@ -1,7 +1,7 @@
 @{
     ViewData["Title"] = "My Order";
 }
-@model List<Pictionary.Application.Orders.Queries.GetOrders.OrderDto>
+@model List<Pictionary.Domain.OrderModel.Order>
 
 @section styles {
     <link rel="stylesheet" href="~/css/my-orders.css" asp-append-version="true" />
@@ -15,8 +15,8 @@
       <div class="user-orders-container">
 
         <div class="user-orders-header">
-          <h2 class="user-orders-title">Order #@order.Id</h2>
-          <h3 class="user-orders-status">@order.Status</h3>
+          <h2 class="user-orders-title">Order #@order.Id.Value</h2>
+          <h3 class="user-orders-status">@order.Status.Value</h3>
         </div>
 
         <div class="user-orders-body">
@@ -38,17 +38,22 @@
             </div>
           }
           <div class="user-orders-col">
-            @if(order.Status == "PENDING_DETAILS")
+            <a href='@Url.Action("generatereceipt", "order", new { id = order.Id.Value.ToString() })' class="navigation-navLink" style="width: 100%;">
+              <button class="user-orders-button">
+                Print
+              </button>
+            </a>
+            @if(order.Status.Value == "PENDING_DETAILS")
             {
-              <a href='@Url.Action("checkout", "order", new { id = order.Id.ToString() })' class="navigation-navLink" style="width: 100%;">
+              <a href='@Url.Action("checkout", "order", new { id = order.Id.Value.ToString() })' class="navigation-navLink" style="width: 100%;">
                 <button class="user-orders-button">
                   Checkout
                 </button>
               </a>
             }
-            @if(order.Status == "PENDING_PAYMENT")
+            @if(order.Status.Value == "PENDING_PAYMENT")
             {
-              <a href='@Url.Action("pay", "order", new { id = order.Id.ToString() })' class="navigation-navLink" style="width: 100%;">
+              <a href='@Url.Action("pay", "order", new { id = order.Id.Value.ToString() })' class="navigation-navLink" style="width: 100%;">
                 <button class="user-orders-button">
                   Pay
                 </button>
@@ -62,7 +67,7 @@
             Total Price: @order.TotalPrice EGP
           </h3>
           <h3 class="user-orders-subtitle">
-            Expected Delivery Date: @DateTime.Now
+            Expected Delivery Date: @order.ExpectedDeliveryAt?.ToString()
             @* {new Date(expectedDeliveryDate).toLocaleDateString("en-US", {
               weekday: "short",
               day: "2-digit",

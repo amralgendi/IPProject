@@ -14,6 +14,6 @@ public class AdminGetOrdersQueryHandler : IQueryHandler<AdminGetOrdersQuery, IEn
     }
     public async ValueTask<IEnumerable<Order>> Handle(AdminGetOrdersQuery query, CancellationToken cancellationToken)
     {
-        return await _orderRepository.GetAll(query.Size, query.Skip);   
+        return await _orderRepository.GetAll(query.Size, query.Page);
     }
 }
